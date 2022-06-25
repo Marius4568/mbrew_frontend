@@ -37,7 +37,7 @@ const LoginForm = () => {
     if (res.error) {
       toast.error(res.error);
     }
-    if (res.msg === 'User created') {
+    if (res.msg === 'Successfully logged in') {
       navigate('/');
     }
   };
