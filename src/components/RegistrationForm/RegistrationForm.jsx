@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import * as S from './RegistrationForm.styles.js';
 // Notification handling
@@ -13,7 +13,7 @@ import Button from '../Button/Button.jsx';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import YupPassword from 'yup-password';
-import { FlashOnRounded } from '@mui/icons-material';
+
 YupPassword(Yup);
 
 const RegistrationForm = () => {

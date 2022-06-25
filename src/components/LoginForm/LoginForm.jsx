@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import * as S from './LoginForm.styles.js';
 // Notification handling
