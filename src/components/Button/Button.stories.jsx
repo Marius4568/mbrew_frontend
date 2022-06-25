@@ -7,3 +7,4 @@ export default {
 };
 
 export const PrimaryButton = () => <Button>Me button</Button>;
+export const LoadingButton = () => <Button className="loading">Loading...</Button>;

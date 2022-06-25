@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import './global.css';
 
+
+
 import Router from './Router';
 
 import { QueryClientProvider, QueryClient } from 'react-query';
