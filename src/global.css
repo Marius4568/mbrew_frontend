@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 h1,
@@ -9,4 +10,9 @@ h2,
 h3,
 h4 {
   font-family: 'Fugaz One', cursive;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }

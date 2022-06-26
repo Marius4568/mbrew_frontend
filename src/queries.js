@@ -9,6 +9,7 @@ export const productsQuery = gql`
           description
           slug
           price
+          colorScheme
           createdAt
           image {
             data {
@@ -23,15 +24,17 @@ export const productsQuery = gql`
   }
 `;
 
-export const productQuery = `
+export const productQuery = (slug) => {
+  return gql`
 query {
-  products(filters: {slug :{eq: "kiwi-guru"}}){
+  products(filters: {slug :{eq: "${slug}"}}){
     data{
       attributes{
         title
         slug
         description
         price
+        colorScheme
         image{
           data{
             attributes{
@@ -43,3 +46,4 @@ query {
     }
   }
 }`;
+};

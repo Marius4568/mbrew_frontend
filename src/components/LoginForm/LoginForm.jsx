@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import * as S from './LoginForm.styles.js';
+// Context
+import { useAuth } from '../../lib/authContext';
 // Notification handling
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,6 +17,7 @@ import * as Yup from 'yup';
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const { setToken } = useAuth();
 
   const [buttonLoading, setbuttonLoading] = useState('');
 
@@ -38,7 +41,10 @@ const LoginForm = () => {
       toast.error(res.error);
     }
     if (res.msg === 'Successfully logged in') {
-      navigate('/');
+      localStorage.setItem('token', res.token);
+      localStorage.setItem('userData', JSON.stringify(res.userData));
+      setToken(true);
+      navigate('/dashboard', { replace: true });
     }
   };
 
@@ -65,18 +71,15 @@ const LoginForm = () => {
     <S.LoginForm>
       <form onSubmit={formik.handleSubmit}>
         {loginInputs.map((input) => (
-          <>
+          <div key={input.id}>
             <FormInput
-              key={input.id}
               value={formik.values[input.name]}
               {...input}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            {formik.touched[input.name] && formik.errors[input.name] ? (
-              <p key={input.id + 'error'}>{formik.errors[input.name]}</p>
-            ) : null}
-          </>
+            {formik.touched[input.name] && formik.errors[input.name] ? <p>{formik.errors[input.name]}</p> : null}
+          </div>
         ))}
 
         <Button className={buttonLoading} type="submit">

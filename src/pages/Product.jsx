@@ -1,11 +1,43 @@
 import React from 'react';
 
 import { useParams } from 'react-router';
+import { useQuery } from 'react-query';
+import { request } from 'graphql-request';
+import { productQuery } from '../queries';
+import { formatCurrency } from '../util/formatCurrency';
+
+import { Link } from 'react-router-dom';
 
 const Product = () => {
   const { slug } = useParams();
-  console.log(slug);
-  return <div>Product</div>;
+  const query = productQuery(slug);
+
+  const { data, status } = useQuery('product', () => {
+    return request(process.env.REACT_APP_STRAPI_BACKEND_API_LINK, query);
+  });
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'error') {
+    return <div>Error :(</div>;
+  }
+
+  const { title, price, description, colorScheme } = data.products.data[0].attributes;
+  const imageSrc = data.products.data[0].attributes.image.data.attributes.formats.medium.url;
+
+  return (
+    <>
+      <div>
+        <div className="imgWrapper" color1={'colorScheme.color1'} color2={'colorScheme.color2'}>
+          <img src={imageSrc} alt={title} />
+        </div>
+        <p>{title}</p>
+        <p>{formatCurrency(price)}</p>
+      </div>
+    </>
+  );
 };
 
 export default Product;

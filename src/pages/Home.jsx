@@ -1,11 +1,18 @@
 import React from 'react';
 
 import Products from '../components/Products/Products';
+import Section from '../components/Section/Section';
+
+import { useGlobalShopContext } from '../lib/shopContext';
 
 const Home = () => {
+  // const { qty } = useGlobalShopContext();
+
   return (
     <>
-      <Products />
+      <Section title="Selection">
+        <Products />
+      </Section>
     </>
   );
 };

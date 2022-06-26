@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 const ShopContext = createContext();
 
-export const GlobalContext = ({ children }) => {
+export const GlobalShopContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [qty, setQty] = useState(1);
@@ -73,4 +73,4 @@ export const GlobalContext = ({ children }) => {
   );
 };
 
-export const useGlobalContext = () => useContext(ShopContext);
+export const useGlobalShopContext = () => useContext(ShopContext);

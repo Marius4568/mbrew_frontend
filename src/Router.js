@@ -5,15 +5,24 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Product from './pages/Product';
+import Dashboard from './pages/Dashboard';
+import Header from './components/Header/Header';
+
+import { PrivateRoutes } from './components/PrivateRoutes';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/product/:slug" element={<Product />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
+
+        <Route element={<PrivateRoutes />}>
+          <Route exact path="/dashboard" element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

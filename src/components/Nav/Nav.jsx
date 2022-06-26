@@ -2,17 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Nav.styles.js';
 
-const Nav = ({ navItems }) => {
+import CartNavItem from '../CartNavItem/CartNavItem';
+import ProfileNavItem from '../ProfileNavItem/ProfileNavItem';
+import { useNavigate, Link } from 'react-router-dom';
+
+import { useAuth } from '../../lib/authContext';
+
+import Logo from '../../assets/img/logo.svg';
+
+const Nav = () => {
+  const navigate = useNavigate();
+  const { token, setToken } = useAuth();
+
+  const userData = JSON.parse(localStorage.getItem('userData'));
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userData');
+    setToken(false);
+    navigate('/', { replace: true });
+  };
+
   return (
     <S.Nav>
-      <p>Menu</p>
-      <div>
-        {navItems &&
-          navItems.map((item) => {
-            const Tag = item.tagName;
-            return <Tag key={item.title}>{item.title}</Tag>;
-          })}
-      </div>
+      <Link className="Link" to="/">
+        <img src={Logo} alt="logo" />
+      </Link>
+
+      {token && <button onClick={handleLogout}>Logout</button>}
+      <ProfileNavItem />
+      <CartNavItem />
     </S.Nav>
   );
 };

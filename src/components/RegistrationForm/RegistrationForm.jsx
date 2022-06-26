@@ -81,18 +81,15 @@ const RegistrationForm = () => {
     <S.RegistrationForm>
       <form onSubmit={formik.handleSubmit}>
         {registrationInputs.map((input) => (
-          <>
+          <div key={input.id}>
             <FormInput
-              key={input.id}
               value={formik.values[input.name]}
               {...input}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            {formik.touched[input.name] && formik.errors[input.name] ? (
-              <p key={input.id + 'error'}>{formik.errors[input.name]}</p>
-            ) : null}
-          </>
+            {formik.touched[input.name] && formik.errors[input.name] ? <p>{formik.errors[input.name]}</p> : null}
+          </div>
         ))}
 
         <Button className={buttonLoading} type="submit">
