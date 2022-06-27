@@ -11,7 +11,7 @@ const Cart = () => {
 
   const handleCheckout = async (products) => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK_TESTING}stripe/create_checkout_session`, {
+      const res = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}stripe/create_checkout_session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
