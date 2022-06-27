@@ -9,6 +9,25 @@ import CartItem from '../CartItem/CartItem';
 const Cart = () => {
   const { cartItems, setShowCart } = useGlobalShopContext();
 
+  const handleCheckout = async (products) => {
+    try {
+      const res = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK_TESTING}stripe/create_checkout_session`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ products }),
+      });
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      console.error(err.error);
+    }
+  };
+
   return (
     <S.CartWrapper>
       <button onClick={() => setShowCart(false)}>close</button>
@@ -19,7 +38,7 @@ const Cart = () => {
           {cartItems.map((item) => (
             <CartItem key={item.slug} />
           ))}
-          <button>derp</button>
+          <button onClick={() => handleCheckout(cartItems)}>Checkout</button>
         </S.Cart>
       )}
     </S.CartWrapper>
