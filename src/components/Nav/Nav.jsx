@@ -14,7 +14,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const { token, setToken } = useAuth();
 
-  const userData = JSON.parse(localStorage.getItem('userData'));
+  // const userData = JSON.parse(localStorage.getItem('userData'));
 
   const handleLogout = () => {
     localStorage.removeItem('token');

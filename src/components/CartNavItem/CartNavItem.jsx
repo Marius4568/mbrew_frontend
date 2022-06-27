@@ -1,20 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import * as S from './CartNavItem.styles.js';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+import { useGlobalShopContext } from '../../lib/shopContext.js';
+
+// import Cart from '../Cart/Cart';
+
 const CartNavItem = () => {
+  const { setShowCart, totalQuantities } = useGlobalShopContext();
+
   return (
-    <S.CartNavItem>
+    <S.CartNavItem onClick={() => setShowCart(true)}>
       <div className="CartIconWrapper">
         <ShoppingCartIcon />
-        <span className="cartItemQuantity">3</span>
+        {totalQuantities > 0 && <span className="cartItemQuantity">{totalQuantities}</span>}
       </div>
-
-      {/* <p>Cart</p> */}
     </S.CartNavItem>
   );
 };
 
 export default CartNavItem;
+
+// {showCart && <Cart />}

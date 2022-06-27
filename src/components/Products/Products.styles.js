@@ -39,7 +39,7 @@ export const Product = styled.div`
       width: 12rem;
       height: 12rem;
       border-radius: 50%;
-      background: ${'#111'};
+      background: ${(props) => props.children[1].props.color2};
       background: linear-gradient(
         0deg,
         ${(props) => props.children[1].props.color2} 0%,

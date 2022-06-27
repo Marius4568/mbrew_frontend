@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
-import Product from './pages/Product';
+import ProductPage from './pages/ProductPage';
 import Dashboard from './pages/Dashboard';
 import Header from './components/Header/Header';
 
@@ -16,7 +16,7 @@ const Router = () => {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/product/:slug" element={<Product />} />
+        <Route exact path="/product/:slug" element={<ProductPage />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
 

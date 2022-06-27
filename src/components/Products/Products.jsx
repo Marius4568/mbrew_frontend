@@ -11,7 +11,7 @@ import { formatCurrency } from '../../util/formatCurrency';
 
 import Button from '../Button/Button';
 
-const Products = ({ children }) => {
+const Products = () => {
   const { data, status } = useQuery('products', () => {
     return request(process.env.REACT_APP_STRAPI_BACKEND_API_LINK, productsQuery);
   });
@@ -28,7 +28,7 @@ const Products = ({ children }) => {
     <S.Products>
       <S.ProductsInnerWrap>
         {data.products.data.map((product) => {
-          const { title, description, price, slug, colorScheme } = product.attributes;
+          const { title, price, slug, colorScheme } = product.attributes;
           const imageSrc = product.attributes.image.data.attributes.formats.small.url;
           return (
             <S.Product key={slug}>

@@ -7,7 +7,7 @@ export const CartNavItem = styled.div`
 
   & .CartIconWrapper {
     position: relative;
-
+    cursor: pointer;
     width: 1.5rem;
     height: 1.5rem;
     padding: 0.5rem;
