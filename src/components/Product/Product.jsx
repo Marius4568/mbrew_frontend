@@ -40,27 +40,32 @@ const Product = () => {
   const imageSrc = data.products.data[0].attributes.image.data.attributes.formats.medium.url;
 
   return (
-    <S.Product>
-      <S.LeftSide>
-        <S.ImgWrapper className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
-          <img src={imageSrc} alt={title} />
-        </S.ImgWrapper>
-      </S.LeftSide>
-      <S.RightSide>
-        <h3>{title}</h3>
-        <p>{formatCurrency(price)}</p>
-        <p>{description}</p>
-        <ProductAddToCart>
-          <S.AddToCartButton
-            handleClick={() => {
-              onAdd(data.products.data[0].attributes, qty);
-            }}
-          >
-            Add to cart
-          </S.AddToCartButton>
-        </ProductAddToCart>
-      </S.RightSide>
-    </S.Product>
+    <>
+      <S.Product>
+        <S.LeftSide>
+          <S.ImgWrapper className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
+            <img src={imageSrc} alt={title} />
+          </S.ImgWrapper>
+        </S.LeftSide>
+        <S.RightSide>
+          <S.Title>{title}</S.Title>
+          <S.Price>{formatCurrency(price)}</S.Price>
+
+          <ProductAddToCart>
+            <S.AddToCartButton
+              handleClick={() => {
+                onAdd(data.products.data[0].attributes, qty);
+              }}
+            >
+              Add to cart
+            </S.AddToCartButton>
+          </ProductAddToCart>
+          <S.Description>
+            <p>Description:</p> <span>{description}</span>
+          </S.Description>
+        </S.RightSide>
+      </S.Product>
+    </>
   );
 };
 

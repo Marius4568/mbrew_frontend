@@ -10,15 +10,14 @@ const ProductAddToCart = ({ children }) => {
   return (
     <S.ProductAddToCart>
       <S.QuantityContainer>
-        <S.QuantityLabel>Quantity</S.QuantityLabel>
+        <S.QuantityLabel>Quantity:</S.QuantityLabel>
         <S.QuantityHandling>
           <S.DecreaseQuantity onClick={() => decreaseQty(-1)}>-</S.DecreaseQuantity>
           <S.Quantity>{qty}</S.Quantity>
           <S.IncreaseQuantity onClick={() => increaseQty(+1)}>+</S.IncreaseQuantity>
         </S.QuantityHandling>
+        {children}
       </S.QuantityContainer>
-
-      {children}
     </S.ProductAddToCart>
   );
 };

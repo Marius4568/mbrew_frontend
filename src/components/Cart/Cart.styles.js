@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const CartWrapper = styled.div`
-  position: fixed;
-  width: 100vw;
+  position: absolute;
+  width: 100%;
   height: 100vh;
   right: 0;
   top: 0;

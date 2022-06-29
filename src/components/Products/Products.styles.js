@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Products = styled.div`
-  border: 5px solid black;
   padding: 2rem;
 `;
 
@@ -11,15 +10,40 @@ export const ProductsInnerWrap = styled.div`
   align-items: center;
   justify-items: center;
   justify-content: center;
-  grid-gap: 2rem;
+  grid-gap: 4rem;
 `;
 
 export const Product = styled.div`
-  min-width: 16rem;
-  width: 30vw;
-  max-width: 20rem;
+  width: 16rem;
   height: 25rem;
-  border: 1px solid black;
+  /* border: 0.2rem solid black; */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 0 1rem 1rem 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.2rem;
+
+  p {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* &:after {
+    content: '';
+    position: absolute;
+    border: 0.2rem solid black;
+    height: 92.5%;
+    width: 88.5%;
+    top: calc(3.5% - 0.2rem);
+    left: calc(5.75% - 0.2rem);
+  } */
 
   .imgWrapper {
     position: relative;
@@ -39,11 +63,13 @@ export const Product = styled.div`
       width: 12rem;
       height: 12rem;
       border-radius: 50%;
-      background: ${(props) => props.children[1].props.color2};
+
+      background: ${(props) => props.children[0].props.children.props.color2};
+
       background: linear-gradient(
         0deg,
-        ${(props) => props.children[1].props.color2} 0%,
-        ${(props) => props.children[1].props.color1} 100%
+        ${(props) => props.children[0].props.children.props.color2} 0%,
+        ${(props) => props.children[0].props.children.props.color1} 100%
       );
       top: calc(50%);
       left: 50%;
@@ -52,7 +78,29 @@ export const Product = styled.div`
     }
   }
 
+  .price {
+    background-color: #f1e468;
+    padding: 0.25rem 0;
+    border-top-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    border-bottom: 0.1rem solid black;
+    border-right: 0.1rem solid black;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+
   /* @media screen and (min-width: 768px) {
     
   } */
 `;
+
+// ${(props) => {
+//   console.log(props.children[0].props.children.props.color2);
+//   return props.children[1].props.color2;
+// }}

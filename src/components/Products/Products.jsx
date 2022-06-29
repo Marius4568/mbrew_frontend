@@ -10,14 +10,27 @@ import { productsQuery } from '../../queries';
 import { formatCurrency } from '../../util/formatCurrency';
 
 import Button from '../Button/Button';
+import LoadingProductSkeleton from '../LoadingProductSkeleton/LoadingProductSkeleton';
+
+import { useGlobalShopContext } from '../../lib/shopContext';
 
 const Products = () => {
+  const { onAdd } = useGlobalShopContext();
+
   const { data, status } = useQuery('products', () => {
     return request(process.env.REACT_APP_STRAPI_BACKEND_API_LINK, productsQuery);
   });
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return (
+      <S.Products>
+        <S.ProductsInnerWrap>
+          <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+          <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+          <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+        </S.ProductsInnerWrap>
+      </S.Products>
+    );
   }
 
   if (status === 'error') {
@@ -30,17 +43,23 @@ const Products = () => {
         {data.products.data.map((product) => {
           const { title, price, slug, colorScheme } = product.attributes;
           const imageSrc = product.attributes.image.data.attributes.formats.small.url;
+
           return (
             <S.Product key={slug}>
-              {' '}
-              <div className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
-                <img src={imageSrc} alt="" />
-              </div>
-              <p>{title}</p>
-              <p>{formatCurrency(price)}</p>
               <Link to={`/product/${slug}`}>
-                <Button>Order</Button>
+                <div className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
+                  <img src={imageSrc} alt="" />
+                </div>
               </Link>
+              <h3>{title}</h3>
+              <p className="price">{formatCurrency(price)}</p>
+              <Button
+                handleClick={() => {
+                  onAdd(product.attributes, 1);
+                }}
+              >
+                Add to cart
+              </Button>
             </S.Product>
           );
         })}
