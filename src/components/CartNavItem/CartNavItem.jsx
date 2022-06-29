@@ -12,7 +12,12 @@ const CartNavItem = () => {
   const { setShowCart, totalQuantities } = useGlobalShopContext();
 
   return (
-    <S.CartNavItem onClick={() => setShowCart(true)}>
+    <S.CartNavItem
+      onClick={() => {
+        document.body.style.overflow = 'hidden';
+        return setShowCart(true);
+      }}
+    >
       <div className="CartIconWrapper">
         <ShoppingCartIcon />
         {totalQuantities > 0 && <span className="cartItemQuantity">{totalQuantities}</span>}

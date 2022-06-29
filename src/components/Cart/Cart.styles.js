@@ -18,6 +18,7 @@ export const EmptyCart = styled.div`
   position: absolute;
   z-index: 1;
   background-color: white;
+  overflow-y: auto;
 `;
 
 export const Cart = styled.div`
@@ -28,4 +29,5 @@ export const Cart = styled.div`
   top: 0;
   right: 0;
   background-color: white;
+  overflow-y: auto;
 `;

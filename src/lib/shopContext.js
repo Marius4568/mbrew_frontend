@@ -35,18 +35,23 @@ export const GlobalShopContext = ({ children }) => {
     }
   };
 
-  const onRemove = (product) => {
+  const onRemove = (product, quantity = 1) => {
     // Decrease total price
-    setTotalPrice((prevTotal) => prevTotal - product.price);
+    setTotalPrice((prevTotal) => prevTotal - product.price * quantity);
     // Decrease total quantity
-    setTotalQuantities((prevTotal) => prevTotal - 1);
+    setTotalQuantities((prevTotal) => prevTotal - quantity);
     // Check if the product is already in the cart
-    const exist = cartItems.find((item) => item.slug === product.slug);
-    if (exist.quantity === 1) {
+    const exist = cartItems.find((item) => {
+      return item.slug === product.slug;
+    });
+
+    if (exist.quantity - quantity <= 0) {
       setCartItems(cartItems.filter((item) => item.slug !== product.slug));
     } else {
       setCartItems(
-        cartItems.map((item) => (item.slug === product.slug ? { ...exist, quantity: exist.quantity - 1 } : item)),
+        cartItems.map((item) =>
+          item.slug === product.slug ? { ...exist, quantity: exist.quantity - quantity } : item,
+        ),
       );
     }
   };

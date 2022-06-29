@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import * as S from './LoginForm.styles.js';
 // Context
 import { useAuth } from '../../lib/authContext';
@@ -93,6 +93,9 @@ const LoginForm = () => {
           pauseOnHover={false}
           transition={Slide}
         />
+        <p>
+          Don't have an account yet? <Link to="/register">Register here</Link>
+        </p>
       </form>
     </S.LoginForm>
   );

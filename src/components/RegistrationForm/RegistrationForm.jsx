@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import * as S from './RegistrationForm.styles.js';
 // Notification handling
 import { ToastContainer, toast, Slide } from 'react-toastify';
@@ -103,6 +103,9 @@ const RegistrationForm = () => {
           pauseOnHover={false}
           transition={Slide}
         />
+        <p>
+          Already have an account? <Link to="/login">Login here</Link>
+        </p>
       </form>
     </S.RegistrationForm>
   );
