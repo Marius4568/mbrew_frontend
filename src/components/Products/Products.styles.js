@@ -55,6 +55,11 @@ export const Product = styled.div`
       object-fit: contain;
       position: relative;
       z-index: 1;
+      user-select: none;
+      -drag: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
     }
 
     &:after {
@@ -79,7 +84,7 @@ export const Product = styled.div`
   }
 
   .price {
-    background-color: #f1e468;
+    background-color: var(--accent-yellow-color);
     padding: 0.25rem 0;
     border-top-left-radius: 0.2rem;
     border-bottom-right-radius: 0.2rem;

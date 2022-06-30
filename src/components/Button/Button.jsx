@@ -11,7 +11,7 @@ const Button = ({ type, children, handleClick, className }) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
   type: PropTypes.oneOf(['submit', 'reset', 'button', 'delete']),
   handleClick: PropTypes.func,
   className: PropTypes.string,

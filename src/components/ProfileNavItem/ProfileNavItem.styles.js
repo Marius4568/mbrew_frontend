@@ -20,7 +20,7 @@ export const ProfileNavItem = styled.div`
   & .cartItemQuantity {
     position: absolute;
     display: block;
-    background-color: red;
+    background-color: var(--accent-red-color);
     border-radius: 50%;
     width: 1.2rem;
     height: 1.2rem;

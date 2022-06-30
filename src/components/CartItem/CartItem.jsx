@@ -12,13 +12,25 @@ const CartItem = (props) => {
 
   return (
     <S.CartItem>
-      <p>{title}</p>
-      <img src={imgSrc} alt="" />
-      <p>{formatCurrency(price)}</p>
-      <p>quantity: {quantity}</p>
-      <button onClick={() => onAdd(item, 1)}>+</button>
-      <button onClick={() => onRemove(item)}>-</button>
-      <button onClick={() => onRemove(item, quantity)}>Remove</button>
+      <S.LeftSide>
+        <S.ImgWrapper>
+          <img src={imgSrc} alt={title} />
+        </S.ImgWrapper>
+
+        <S.ProductInfo>
+          <S.Title>{title}</S.Title>
+          <S.Price>{formatCurrency(price)}</S.Price>
+        </S.ProductInfo>
+      </S.LeftSide>
+      <S.RightSide>
+        <S.QuantityControls>
+          <S.Add onClick={() => onAdd(item, 1)}></S.Add>
+          <S.ItemQuantity>{quantity}</S.ItemQuantity>
+          <S.Substract onClick={() => onRemove(item)}></S.Substract>
+        </S.QuantityControls>
+
+        <S.RemoveItem handleClick={() => onRemove(item, quantity)}>Remove</S.RemoveItem>
+      </S.RightSide>
     </S.CartItem>
   );
 };

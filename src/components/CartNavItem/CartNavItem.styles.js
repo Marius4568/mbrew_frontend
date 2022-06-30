@@ -20,15 +20,15 @@ export const CartNavItem = styled.div`
   & .cartItemQuantity {
     position: absolute;
     display: block;
-    background-color: red;
+    background-color: var(--accent-yellow-color);
     border-radius: 50%;
     width: 1.2rem;
     height: 1.2rem;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
     display: grid;
     place-items: center;
-    color: rgb(255, 255, 255);
+    color: var(--main-dark-color);
     bottom: -5%;
     right: -15%;
   }

@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import * as S from './Product.styles.js';
 
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useParams } from 'react-router';
 import { useQuery } from 'react-query';
 import { request } from 'graphql-request';
@@ -54,6 +57,7 @@ const Product = () => {
           <ProductAddToCart>
             <S.AddToCartButton
               handleClick={() => {
+                toast.success(`${title} was added to cart!`);
                 onAdd(data.products.data[0].attributes, qty);
               }}
             >
@@ -64,6 +68,14 @@ const Product = () => {
             <p>Description:</p> <span>{description}</span>
           </S.Description>
         </S.RightSide>
+        <ToastContainer
+          className="toast-position"
+          position="top-center"
+          autoClose={1200}
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          transition={Slide}
+        />
       </S.Product>
     </>
   );

@@ -9,6 +9,9 @@ import { request } from 'graphql-request';
 import { productsQuery } from '../../queries';
 import { formatCurrency } from '../../util/formatCurrency';
 
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Button from '../Button/Button';
 import LoadingProductSkeleton from '../LoadingProductSkeleton/LoadingProductSkeleton';
 
@@ -38,7 +41,7 @@ const Products = () => {
   }
 
   return (
-    <S.Products>
+    <S.Products id="products">
       <S.ProductsInnerWrap>
         {data.products.data.map((product) => {
           const { title, price, slug, colorScheme } = product.attributes;
@@ -55,6 +58,7 @@ const Products = () => {
               <p className="price">{formatCurrency(price)}</p>
               <Button
                 handleClick={() => {
+                  toast.success(`${title} was added to cart!`);
                   onAdd(product.attributes, 1);
                 }}
               >
@@ -64,6 +68,14 @@ const Products = () => {
           );
         })}
       </S.ProductsInnerWrap>
+      <ToastContainer
+        className="toast-position"
+        position="top-center"
+        autoClose={1200}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        transition={Slide}
+      />
     </S.Products>
   );
 };

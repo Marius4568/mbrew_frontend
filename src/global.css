@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+  --main-dark-color: #000;
+  --main-light-color: #fff;
+  --accent-yellow-color: #f1e468;
+  --toastify-color-success: #f1e468 !important;
+  --toastify-icon-color-success: #000 !important;
+  --accent-red-color: #ff3a31;
+  --accent-grey-color: #d9d9d9;
+  scroll-behavior: smooth;
+}
+
+.toast-position {
+  top: 4.5rem !important;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;

@@ -20,8 +20,8 @@ export const LeftSide = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  width: 18rem;
-  height: 18rem;
+  width: 16rem;
+  height: 16rem;
   position: relative;
 
   &:after {
@@ -45,6 +45,11 @@ export const ImgWrapper = styled.div`
     object-fit: contain;
     position: relative;
     z-index: 1;
+    user-select: none;
+    -drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
   }
 
   @media screen and (min-width: 768px) {
@@ -82,7 +87,7 @@ export const Title = styled.h3`
 export const Price = styled.p`
   font-size: 1.1rem;
   font-weight: 600;
-  background-color: #f1e468;
+  background-color: var(--accent-yellow-color);
   padding: 0.4rem 2rem;
   border-top-left-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;

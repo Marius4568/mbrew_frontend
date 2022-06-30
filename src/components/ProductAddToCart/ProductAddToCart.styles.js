@@ -29,7 +29,7 @@ export const QuantityContainer = styled.div`
 `;
 
 export const QuantityLabel = styled.div`
-  background-color: #d9d9d9;
+  background-color: var(--accent-grey-color);
   display: grid;
   place-items: center;
   padding: 0.85rem 2rem;
@@ -45,7 +45,7 @@ export const QuantityLabel = styled.div`
 export const QuantityHandling = styled.div`
   display: flex;
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--main-light-color);
   align-items: center;
   justify-content: center;
 `;

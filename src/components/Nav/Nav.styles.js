@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-  background-color: rgb(255, 255, 255);
+  background-color: var(--main-light-color);
   width: 100%;
   height: 100%;
   display: flex;
@@ -16,6 +16,11 @@ export const Nav = styled.nav`
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
+    user-select: none;
+    -drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
   }
 
   @media screen and (min-width: 768px) {

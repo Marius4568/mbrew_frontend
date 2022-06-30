@@ -6,10 +6,10 @@ const rotate = keyframes`
 `;
 
 export const Button = styled.button`
-  background-color: rgb(0, 0, 0);
+  background-color: var(--main-dark-color);
   padding: 0.85rem 2rem;
   border: none;
-  color: #fefefe;
+  color: var(--main-light-color);
   border-radius: 0.2rem;
   cursor: pointer;
   font-weight: 600;
@@ -26,11 +26,11 @@ export const Button = styled.button`
       top: -400%;
       width: 200%;
       height: 800%;
-      background-color: black;
+      background-color: var(--main-dark-color);
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
-      background-image: linear-gradient(#f1e468, #000);
+      background-image: linear-gradient(var(--accent-yellow-color), var(--main-dark-color));
       animation-name: ${rotate};
       animation-duration: 2s;
       animation-iteration-count: infinite;
@@ -45,7 +45,7 @@ export const Button = styled.button`
       top: 0.25rem;
       width: calc(100% - 0.5rem);
       height: calc(100% - 0.5rem);
-      background: rgb(0, 0, 0);
+      background: var(--main-dark-color);
       border-radius: 0.2rem;
     }
   }
