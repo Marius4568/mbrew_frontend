@@ -57,7 +57,7 @@ const Cart = () => {
 
               <Button
                 handleClick={() => {
-                  window.location.href = 'http://localhost:3000/#products';
+                  window.location.href = `${process.env.REACT_APP_FRONTEND_LINK}#products`;
                   document.body.style.overflowY = 'auto';
                   setShowCart(false);
                 }}
