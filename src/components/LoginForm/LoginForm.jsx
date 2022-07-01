@@ -82,7 +82,9 @@ const LoginForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            {formik.touched[input.name] && formik.errors[input.name] ? <p>{formik.errors[input.name]}</p> : null}
+            {formik.touched[input.name] && formik.errors[input.name] ? (
+              <p className="error-message">{formik.errors[input.name]}</p>
+            ) : null}
           </div>
         ))}
 
