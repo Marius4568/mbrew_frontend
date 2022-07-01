@@ -4,6 +4,8 @@ import { Navigate } from 'react-router-dom';
 
 import LoginForm from '../components/LoginForm/LoginForm';
 
+import Section from '../components/Section/Section';
+
 import { useAuth } from '../lib/authContext';
 
 const Login = () => {
@@ -12,7 +14,9 @@ const Login = () => {
   return (
     <>
       {token && <Navigate to="/" replace={true} />}
-      <LoginForm />
+      <Section title="Login">
+        <LoginForm />
+      </Section>
     </>
   );
 };

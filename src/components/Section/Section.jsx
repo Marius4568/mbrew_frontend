@@ -9,7 +9,7 @@ const Section = ({ children, title }) => {
         {title}
         <span> .</span>
       </h3>
-      {children}
+      <S.SectionInner>{children}</S.SectionInner>
     </S.Section>
   );
 };

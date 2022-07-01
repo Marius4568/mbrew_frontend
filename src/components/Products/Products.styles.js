@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Products = styled.div`
   padding: 2rem;
+  width: 100%;
 `;
 
 export const ProductsInnerWrap = styled.div`

@@ -25,13 +25,17 @@ const Nav = () => {
 
   return (
     <S.Nav>
-      <Link className="Link" to="/">
-        <img src={Logo} alt="logo" />
-      </Link>
+      <S.LeftSide>
+        <Link className="Link" to="/">
+          <img src={Logo} alt="logo" />
+        </Link>
+      </S.LeftSide>
 
-      {token && <button onClick={handleLogout}>Logout</button>}
-      <ProfileNavItem />
-      <CartNavItem />
+      <S.RightSide>
+        <ProfileNavItem />
+        {token && <S.Logout onClick={handleLogout}>Logout</S.Logout>}
+        <CartNavItem />
+      </S.RightSide>
     </S.Nav>
   );
 };

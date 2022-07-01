@@ -37,6 +37,7 @@ export const registrationInputs = [
     type: 'password',
     placeholder: 'se57cuRepa7sswo$rd4*84',
     label: 'Confirm Password',
+    required: true,
   },
 ];
 

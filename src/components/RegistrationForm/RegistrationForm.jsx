@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
 import * as S from './RegistrationForm.styles.js';
+// Images
+import formLemon from '../../assets/img/formLemon.png';
 // Notification handling
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -78,8 +80,9 @@ const RegistrationForm = () => {
   });
 
   return (
-    <S.RegistrationForm>
+    <S.RegistrationFormWrapper>
       <form onSubmit={formik.handleSubmit}>
+        <S.LemonDecoration src={formLemon} />
         {registrationInputs.map((input) => (
           <div key={input.id}>
             <FormInput
@@ -88,7 +91,9 @@ const RegistrationForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-            {formik.touched[input.name] && formik.errors[input.name] ? <p>{formik.errors[input.name]}</p> : null}
+            {formik.touched[input.name] && formik.errors[input.name] ? (
+              <p className="error-message">{formik.errors[input.name]}</p>
+            ) : null}
           </div>
         ))}
 
@@ -107,7 +112,8 @@ const RegistrationForm = () => {
           Already have an account? <Link to="/login">Login here</Link>
         </p>
       </form>
-    </S.RegistrationForm>
+      <S.LemonDecoration src={formLemon} />
+    </S.RegistrationFormWrapper>
   );
 };
 

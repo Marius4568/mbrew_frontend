@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
+
+// Images
+import formLemon from '../../assets/img/formLemon.png';
 import * as S from './LoginForm.styles.js';
 // Context
 import { useAuth } from '../../lib/authContext';
@@ -68,8 +71,9 @@ const LoginForm = () => {
   });
 
   return (
-    <S.LoginForm>
+    <S.LoginFormWrapper>
       <form onSubmit={formik.handleSubmit}>
+        <S.LemonDecoration src={formLemon} />
         {loginInputs.map((input) => (
           <div key={input.id}>
             <FormInput
@@ -96,8 +100,9 @@ const LoginForm = () => {
         <p>
           Don't have an account yet? <Link to="/register">Register here</Link>
         </p>
+        <S.LemonDecoration src={formLemon} />
       </form>
-    </S.LoginForm>
+    </S.LoginFormWrapper>
   );
 };
 

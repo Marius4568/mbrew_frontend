@@ -10,6 +10,8 @@ export const Header = styled.header`
   display: grid;
   place-items: center;
   height: 4.5rem;
-  @media screen and (min-width: 768px) {
+  margin-bottom: 8.5rem;
+  @media screen and (min-width: 500px) {
+    margin-bottom: 4.5rem;
   }
 `;

@@ -3,6 +3,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
+import Section from '../components/Section/Section';
 
 import { useAuth } from '../lib/authContext';
 
@@ -12,7 +13,9 @@ const Register = () => {
   return (
     <>
       {token && <Navigate to="/" replace={true} />}
-      <RegistrationForm />
+      <Section title="Register">
+        <RegistrationForm />
+      </Section>
     </>
   );
 };

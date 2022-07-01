@@ -13,3 +13,10 @@ export const Section = styled.div`
     }
   }
 `;
+
+export const SectionInner = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
