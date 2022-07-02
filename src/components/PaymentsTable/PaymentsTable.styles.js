@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const PaymentsTableWrap = styled.div`
-  overflow-y: auto;
   min-height: 25rem;
-  height: 50vh;
-  margin: 2rem 0 3rem 0;
+
+  margin-top: 2rem;
+
   width: 100%;
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -93,6 +94,14 @@ export const PaymentsTableWrap = styled.div`
         text-align: left;
         margin-bottom: 0;
       }
+    }
+  }
+
+  @media (min-width: 768px) {
+    overflow-y: auto;
+    height: 50vh;
+    table {
+      padding-bottom: 0;
     }
   }
 

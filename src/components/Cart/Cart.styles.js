@@ -45,9 +45,22 @@ export const CloseCart = styled(CloseIcon)`
 `;
 
 export const EmptyCart = styled.div`
-  height: 100%;
+  min-height: 100%;
+  top: 0;
+  width: calc(100% - 4rem);
+  padding: 2rem;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--main-light-color);
+
+  cursor: default;
   display: grid;
   place-items: center;
+
+  @media (min-width: 500px) {
+    width: 26rem;
+    right: 0;
+  }
 `;
 
 export const EmptyCartInner = styled.div`
@@ -73,7 +86,7 @@ export const Cart = styled.div`
   z-index: 1;
   background-color: var(--main-light-color);
 
-  cursor: initial;
+  cursor: default;
 
   > p:nth-child(1) {
     font-size: 1.3rem;

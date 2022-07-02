@@ -8,6 +8,7 @@ import ProductPage from './pages/ProductPage';
 import SuccessPage from './pages/SuccessPage';
 import Profile from './pages/Profile';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 import { PrivateRoutes } from './components/PrivateRoutes';
 
@@ -26,6 +27,7 @@ const Router = () => {
           <Route exact path="/profile" element={<Profile />} />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
