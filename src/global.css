@@ -7,12 +7,13 @@
   --toastify-color-success: #f1e468 !important;
   --toastify-icon-color-success: #000 !important;
   --accent-red-color: #ff3a31;
+  --accent-green-color: #3d7434;
   --accent-grey-color: #d9d9d9;
   scroll-behavior: smooth;
 }
 
 .toast-position {
-  top: 5.5rem !important;
+  top: 1rem !important;
 }
 
 body {
@@ -36,6 +37,12 @@ a {
   max-width: 1920px;
   margin: auto;
   position: relative;
+}
+
+@media (min-width: 500px) {
+  .toast-position {
+    top: 5.5rem !important;
+  }
 }
 
 @media (min-width: 600px) {

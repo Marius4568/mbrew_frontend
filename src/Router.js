@@ -6,7 +6,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProductPage from './pages/ProductPage';
 import SuccessPage from './pages/SuccessPage';
-import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 import Header from './components/Header/Header';
 
 import { PrivateRoutes } from './components/PrivateRoutes';
@@ -23,7 +23,7 @@ const Router = () => {
         <Route path="/success" element={<SuccessPage />} />
 
         <Route element={<PrivateRoutes />}>
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

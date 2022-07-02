@@ -7,7 +7,7 @@ const Notification = ({ children }) => {
 };
 
 Notification.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
 
 export default Notification;

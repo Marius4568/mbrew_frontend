@@ -47,7 +47,7 @@ const LoginForm = () => {
       localStorage.setItem('token', res.token);
       localStorage.setItem('userData', JSON.stringify(res.userData));
       setToken(true);
-      navigate('/dashboard', { replace: true });
+      navigate('/profile', { replace: true });
     }
   };
 
