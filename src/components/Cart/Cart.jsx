@@ -36,14 +36,14 @@ const Cart = () => {
   return (
     <S.CartWrapper
       onClick={() => {
-        document.body.style.overflowY = 'auto';
+        document.querySelector('html').style.overflowY = 'auto';
         return setShowCart(false);
       }}
     >
       <S.InnerCartWrapper onClick={(e) => e.stopPropagation()}>
         <S.CloseCart
           onClick={() => {
-            document.body.style.overflowY = 'auto';
+            document.querySelector('html').style.overflowY = 'auto';
             return setShowCart(false);
           }}
         >
@@ -52,19 +52,19 @@ const Cart = () => {
 
         {cartItems.length === 0 && (
           <S.EmptyCart>
-            <S.EmptyCartWrapper>
+            <S.EmptyCartInner>
               <span>Your cart is empty.</span>
 
               <Button
                 handleClick={() => {
                   window.location.href = `${process.env.REACT_APP_FRONTEND_LINK}#products`;
-                  document.body.style.overflowY = 'auto';
+                  document.querySelector('html').style.overflowY = 'auto';
                   setShowCart(false);
                 }}
               >
                 Add items
               </Button>
-            </S.EmptyCartWrapper>
+            </S.EmptyCartInner>
           </S.EmptyCart>
         )}
         {cartItems.length >= 1 && (

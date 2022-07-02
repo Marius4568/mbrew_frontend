@@ -40,8 +40,9 @@ const Product = () => {
   }
 
   const { title, price, description, colorScheme } = data.products.data[0].attributes;
-  const imageSrc = data.products.data[0].attributes.image.data.attributes.formats.medium.url;
-
+  let imageSrc = data.products.data[0].attributes.image.data.attributes.formats.medium.url;
+  imageSrc = imageSrc.replace('upload/', 'upload/f_avif,q_auto/');
+  console.log(imageSrc);
   return (
     <>
       <S.Product>

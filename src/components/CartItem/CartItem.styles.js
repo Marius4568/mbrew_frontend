@@ -19,8 +19,6 @@ export const LeftSide = styled.div`
   display: flex;
   flex: 2;
 
-  margin-right: 1rem;
-
   @media (min-width: 768px) {
     flex: 2;
   }
@@ -85,7 +83,6 @@ export const RightSide = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 1rem;
 `;
 
 export const QuantityControls = styled.div`

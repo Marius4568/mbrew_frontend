@@ -82,6 +82,7 @@ export const RightSide = styled.div`
 export const Title = styled.h3`
   font-size: 2rem;
   margin: 0;
+  text-align: center;
 `;
 
 export const Price = styled.p`

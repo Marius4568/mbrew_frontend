@@ -3,16 +3,12 @@ import styled from 'styled-components';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 export const Nav = styled.nav`
-  background-color: var(--main-light-color);
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1), 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.05);
-  font-family: 'Montserrat', sans-serif;
-  padding-top: 1rem;
 
   @media (min-width: 500px) {
     flex-direction: row;

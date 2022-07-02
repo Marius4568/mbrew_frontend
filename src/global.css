@@ -13,12 +13,16 @@
 }
 
 .toast-position {
-  top: 1rem !important;
+  top: 9.75rem !important;
 }
 
-body {
+body,
+html {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  height: 100%;
 }
 
 h1,
@@ -37,11 +41,12 @@ a {
   max-width: 1920px;
   margin: auto;
   position: relative;
+  padding-top: 11rem;
 }
 
 @media (min-width: 500px) {
-  .toast-position {
-    top: 5.5rem !important;
+  #root {
+    padding-top: 6.25rem;
   }
 }
 

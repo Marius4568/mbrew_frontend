@@ -5,32 +5,19 @@ import CloseIcon from '@mui/icons-material/Close';
 export const CartWrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   right: 0;
   top: 0;
-  bottom: 0;
+
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  overflow-x: hidden;
+
   cursor: pointer;
 `;
 
 export const InnerCartWrapper = styled.div`
-  > div {
-    width: calc(100vw - 4rem);
-    height: 100%;
-    padding: 0 2rem;
-    top: 0;
-
-    position: absolute;
-    z-index: 1;
-    background-color: var(--main-light-color);
-    overflow-y: auto;
-    cursor: initial;
-
-    @media (min-width: 500px) {
-      width: 26rem;
-      right: 0;
-    }
-  }
+  width: 100vw;
 `;
 
 export const CloseCart = styled(CloseIcon)`
@@ -58,12 +45,14 @@ export const CloseCart = styled(CloseIcon)`
 `;
 
 export const EmptyCart = styled.div`
+  height: 100%;
   display: grid;
   place-items: center;
 `;
 
-export const EmptyCartWrapper = styled.div`
-  min-height: 20rem;
+export const EmptyCartInner = styled.div`
+  /* min-height: 20rem; */
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,6 +65,16 @@ export const EmptyCartWrapper = styled.div`
 `;
 
 export const Cart = styled.div`
+  min-height: 100%;
+  top: 0;
+  width: calc(100% - 4rem);
+  padding: 2rem;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--main-light-color);
+
+  cursor: initial;
+
   > p:nth-child(1) {
     font-size: 1.3rem;
     font-weight: 500;
@@ -92,6 +91,11 @@ export const Cart = styled.div`
   > button {
     width: 100%;
     margin-bottom: 2rem;
+  }
+
+  @media (min-width: 500px) {
+    width: 26rem;
+    right: 0;
   }
 
   @media (min-width: 768px) {

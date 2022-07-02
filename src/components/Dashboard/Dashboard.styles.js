@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Dashboard = styled.div`
-  padding: 0 2rem 2rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,7 @@ export const Dashboard = styled.div`
 
   @media (min-width: 1000px) {
     width: calc(100% - 8rem);
-    padding: 0 4rem 4rem 4rem;
+    padding: 4rem;
   }
 `;
 

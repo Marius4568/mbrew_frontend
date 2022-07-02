@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Products = styled.div`
-  padding: 2rem;
-  width: 100%;
+  padding: 3rem;
+  width: calc(100% - 6rem);
 `;
 
 export const ProductsInnerWrap = styled.div`
@@ -11,7 +11,7 @@ export const ProductsInnerWrap = styled.div`
   align-items: center;
   justify-items: center;
   justify-content: center;
-  grid-gap: 4rem;
+  grid-gap: 3rem;
 `;
 
 export const Product = styled.div`

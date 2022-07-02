@@ -45,7 +45,8 @@ const Products = () => {
       <S.ProductsInnerWrap>
         {data.products.data.map((product) => {
           const { title, price, slug, colorScheme } = product.attributes;
-          const imageSrc = product.attributes.image.data.attributes.formats.small.url;
+          let imageSrc = product.attributes.image.data.attributes.formats.small.url;
+          imageSrc = imageSrc.replace('upload/', 'upload/f_avif,q_auto/');
 
           return (
             <S.Product key={slug}>

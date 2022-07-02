@@ -14,7 +14,7 @@ const CartNavItem = () => {
   return (
     <S.CartNavItem
       onClick={() => {
-        document.body.style.overflow = 'hidden';
+        document.querySelector('html').style.overflow = 'hidden';
         return setShowCart(true);
       }}
     >
