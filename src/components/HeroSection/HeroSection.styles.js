@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const HeroSection = styled.div`
   /* background-color: #eee; */
-  height: calc(100vh);
-  max-height: 45rem;
+  height: 100vh;
+
   min-height: 30rem;
   width: 100vw;
   max-width: 1920px;
@@ -21,6 +21,7 @@ export const HeroSection = styled.div`
 
   @media (min-width: 500px) {
     height: calc(100vh + 6.25rem);
+    max-height: 45rem;
     min-height: 45rem;
     top: -6.25rem;
     align-items: flex-start;

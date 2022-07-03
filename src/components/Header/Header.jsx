@@ -19,13 +19,12 @@ const variants = {
   visible: {
     opacity: 1,
     backgroundColor: 'var(--main-light-color)',
-
     y: 0,
   },
 
-  hidden: { y: -100 },
+  hidden: { y: -100, opacity: 0 },
 
-  hiddenMobile: { y: -160 },
+  hiddenMobile: { y: -160, opacity: 0 },
 };
 
 const Header = () => {
