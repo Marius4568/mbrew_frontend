@@ -11,11 +11,13 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import { PrivateRoutes } from './components/PrivateRoutes';
+import ScrollToTop from './ScrollToTop';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/product/:slug" element={<ProductPage />} />
