@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Section.styles.js';
 
-const Section = ({ children, title }) => {
+const Section = ({ children, title, className }) => {
   return (
-    <S.Section>
+    <S.Section className={className}>
       <h3>
         {title}
         <span> .</span>

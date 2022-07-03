@@ -33,15 +33,15 @@ export const DashboardSideBar = styled.div`
   @media (min-width: 768px) {
     margin-top: 0;
     position: absolute;
-    top: 6.25rem;
+    top: 0;
     bottom: 0;
     left: 0;
-    height: calc(100% - 10rem);
+    /* height: calc(100% - 12rem); */
     background-color: var(--main-light-color);
     width: 20vw;
     max-width: 25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    padding: 4rem 2rem 0 2rem;
+    padding: 12rem 2rem 0 2rem;
 
     .dashboard-username {
       text-align: left;

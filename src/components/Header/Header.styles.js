@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-  background-color: var(--main-light-color);
-  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.05), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.05);
+import { motion } from 'framer-motion';
+
+export const Header = styled(motion.header)`
+  background-color: rgba(255, 255, 255, 0);
+
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
   width: 100%;
   max-width: 1920px;
   position: fixed;
@@ -16,3 +19,7 @@ export const Header = styled.header`
     padding: 1rem 0;
   }
 `;
+
+// 0 0 0.5rem 0 rgba(0, 0, 0, 0.05), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.05)
+//var(--main-light-color)
+// ${document.querySelector('#hero') ? 'red' : 'blue'}

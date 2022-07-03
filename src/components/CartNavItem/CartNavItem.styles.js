@@ -14,6 +14,7 @@ export const CartNavItem = styled.div`
     border-radius: 50%;
     display: grid;
     place-items: center;
+    background-color: var(--main-light-color);
     box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1), 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.05);
   }
 

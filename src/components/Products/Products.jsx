@@ -13,6 +13,7 @@ import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Button from '../Button/Button';
+// import Section from '../Section/Section';
 import LoadingProductSkeleton from '../LoadingProductSkeleton/LoadingProductSkeleton';
 
 import { useGlobalShopContext } from '../../lib/shopContext';
@@ -26,13 +27,15 @@ const Products = () => {
 
   if (status === 'loading') {
     return (
-      <S.Products>
-        <S.ProductsInnerWrap>
-          <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
-          <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
-          <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
-        </S.ProductsInnerWrap>
-      </S.Products>
+      <S.ProductsSection title="Selection">
+        <S.Products>
+          <S.ProductsInnerWrap>
+            <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+            <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+            <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+          </S.ProductsInnerWrap>
+        </S.Products>
+      </S.ProductsSection>
     );
   }
 
@@ -41,43 +44,45 @@ const Products = () => {
   }
 
   return (
-    <S.Products id="products">
-      <S.ProductsInnerWrap>
-        {data.products.data.map((product) => {
-          const { title, price, slug, colorScheme } = product.attributes;
-          let imageSrc = product.attributes.image.data.attributes.formats.small.url;
-          imageSrc = imageSrc.replace('upload/', 'upload/f_avif,q_auto/');
+    <S.ProductsSection className="products-section" title="Selection">
+      <S.Products id="products">
+        <S.ProductsInnerWrap>
+          {data.products.data.map((product) => {
+            const { title, price, slug, colorScheme } = product.attributes;
+            let imageSrc = product.attributes.image.data.attributes.formats.small.url;
+            imageSrc = imageSrc.replace('upload/', 'upload/f_avif,q_auto/');
 
-          return (
-            <S.Product key={slug}>
-              <Link to={`/product/${slug}`}>
-                <div className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
-                  <img src={imageSrc} alt="" />
-                </div>
-              </Link>
-              <h3>{title}</h3>
-              <p className="price">{formatCurrency(price)}</p>
-              <Button
-                handleClick={() => {
-                  toast.success(`${title} was added to cart!`);
-                  onAdd(product.attributes, 1);
-                }}
-              >
-                Add to cart
-              </Button>
-            </S.Product>
-          );
-        })}
-      </S.ProductsInnerWrap>
-      <ToastContainer
-        className="toast-position"
-        position="top-center"
-        autoClose={1200}
-        pauseOnFocusLoss={false}
-        pauseOnHover={false}
-        transition={Slide}
-      />
-    </S.Products>
+            return (
+              <S.Product key={slug}>
+                <Link to={`/product/${slug}`}>
+                  <div className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
+                    <img src={imageSrc} alt="" />
+                  </div>
+                </Link>
+                <h3>{title}</h3>
+                <p className="price">{formatCurrency(price)}</p>
+                <Button
+                  handleClick={() => {
+                    toast.success(`${title} was added to cart!`);
+                    onAdd(product.attributes, 1);
+                  }}
+                >
+                  Add to cart
+                </Button>
+              </S.Product>
+            );
+          })}
+        </S.ProductsInnerWrap>
+        <ToastContainer
+          className="toast-position"
+          position="top-center"
+          autoClose={1200}
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          transition={Slide}
+        />
+      </S.Products>
+    </S.ProductsSection>
   );
 };
 

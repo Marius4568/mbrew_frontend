@@ -122,11 +122,11 @@ export const Description = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  /* @media screen and (min-width: 1200px) {
     > p {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
-  }
+  } */
 `;
 
 export const AddToCartButton = styled(Button)``;

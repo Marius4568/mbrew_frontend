@@ -22,7 +22,7 @@ const getPaymentsData = async (token) => {
       },
     });
     const data = await res.json();
-    // console.log(data);
+
     return data;
   } catch (err) {
     console.log(err);
@@ -42,8 +42,6 @@ const PaymentsTable = ({ children }) => {
   if (status === 'error' || data.error) {
     return <div>{data.error ? data.error : 'An error has occured please try refreshing the page'}</div>;
   }
-
-  //  console.log(data, status);
 
   return (
     <Section title="Payments">

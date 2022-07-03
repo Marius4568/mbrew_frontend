@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+import Section from '../Section/Section';
+
+export const ProductsSection = styled(Section)`
+  margin-top: -7rem;
+
+  @media (min-width: 500px) {
+    margin-top: -3rem;
+  }
+
+  @media (min-width: 1000px) {
+    margin-top: 0;
+  }
+`;
+
 export const Products = styled.div`
   padding: 3rem;
   width: calc(100% - 6rem);
@@ -17,7 +31,7 @@ export const ProductsInnerWrap = styled.div`
 export const Product = styled.div`
   width: 16rem;
   height: 25rem;
-  /* border: 0.2rem solid black; */
+
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   padding: 0 1rem 1rem 1rem;
   position: relative;
@@ -35,16 +49,6 @@ export const Product = styled.div`
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
   }
-
-  /* &:after {
-    content: '';
-    position: absolute;
-    border: 0.2rem solid black;
-    height: 92.5%;
-    width: 88.5%;
-    top: calc(3.5% - 0.2rem);
-    left: calc(5.75% - 0.2rem);
-  } */
 
   .imgWrapper {
     position: relative;
@@ -100,10 +104,6 @@ export const Product = styled.div`
   button {
     font-size: 0.9rem;
   }
-
-  /* @media screen and (min-width: 768px) {
-    
-  } */
 `;
 
 // ${(props) => {

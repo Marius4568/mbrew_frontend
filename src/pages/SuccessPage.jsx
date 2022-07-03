@@ -31,8 +31,6 @@ const SuccessPage = () => {
     return <div>Error :(</div>;
   }
 
-  console.log(data.order, status);
-
   return (
     <div>
       <h1>Success!</h1>

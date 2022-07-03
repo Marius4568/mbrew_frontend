@@ -2,7 +2,7 @@
 
 :root {
   --main-dark-color: #000;
-  --main-light-color: #fff;
+  --main-light-color: rgba(255, 255, 255, 1);
   --accent-yellow-color: #f1e468;
   --toastify-color-success: #f1e468 !important;
   --toastify-icon-color-success: #000 !important;
@@ -12,21 +12,13 @@
   scroll-behavior: smooth;
 }
 
-.toast-position {
-  top: 9.75rem !important;
-}
-
-html {
-  min-height: 100vh;
-}
-
 body,
 html {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   position: relative;
   margin: 0;
-  height: 100%;
+  /* height: 100%; */
 }
 
 h1,
@@ -45,14 +37,10 @@ a {
   max-width: 1920px;
   margin: auto;
   position: relative;
-  padding: 11rem 0 9rem 0;
-  min-height: 100%;
-}
-
-@media (min-height: 500px) {
-  #root {
-    padding-bottom: 5rem;
-  }
+  padding: 9.75rem 0 12rem 0;
+  overflow: hidden;
+  min-height: 100vh;
+  height: 100%;
 }
 
 @media (min-width: 500px) {
@@ -61,8 +49,6 @@ a {
   }
 }
 
-@media (min-width: 600px) {
-  .toast-position {
-    top: 1rem !important;
-  }
-}
+/* .toast-position {
+  top: 1rem !important;
+} */

@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Products from '../components/Products/Products';
-import Section from '../components/Section/Section';
+
+import HeroSection from '../components/HeroSection/HeroSection';
 
 const Home = () => {
   return (
     <>
-      <Section title="Selection">
-        <Products />
-      </Section>
+      <HeroSection />
+      <Products />
     </>
   );
 };

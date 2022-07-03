@@ -6,8 +6,8 @@ export const Footer = styled.footer`
   width: 100%;
   max-width: 1920px;
   height: 5rem;
-  margin-top: 5rem;
-  margin-bottom: -5rem;
+  /* margin-top: 5rem; */
+  /* margin-bottom: -5rem; */
   position: absolute;
   bottom: 0;
   display: grid;
