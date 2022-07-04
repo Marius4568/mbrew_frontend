@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './global.css';
 
-import { GlobalShopContext } from './lib/shopContext';
-import { AuthProvider } from './lib/authContext';
+import { GlobalShopContext } from './contexts/shopContext';
+import { AuthProvider } from './contexts/authContext';
 
-import Router from './Router';
+import Router from './routing/Router';
 
 import { QueryClientProvider, QueryClient } from 'react-query';
 

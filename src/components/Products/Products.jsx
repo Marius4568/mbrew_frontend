@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { useQuery } from 'react-query';
 import { request } from 'graphql-request';
-import { productsQuery } from '../../queries';
+import { productsQuery } from '../../queries/graphqlQueries';
 import { formatCurrency } from '../../util/formatCurrency';
 
 import { ToastContainer, toast, Slide } from 'react-toastify';
@@ -14,12 +14,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Button from '../Button/Button';
 // import Section from '../Section/Section';
-import LoadingProductSkeleton from '../LoadingProductSkeleton/LoadingProductSkeleton';
+import LoadingProductSkeleton from '../Loading/LoadingProductSkeleton/LoadingProductSkeleton';
 
-import { useGlobalShopContext } from '../../lib/shopContext';
+import { useGlobalShopContext } from '../../contexts/shopContext';
 
 const Products = () => {
-  const { onAdd } = useGlobalShopContext();
+  const { onAdd, setShowHeader } = useGlobalShopContext();
 
   const { data, status } = useQuery('products', () => {
     return request(process.env.REACT_APP_STRAPI_BACKEND_API_LINK, productsQuery);
@@ -63,6 +63,7 @@ const Products = () => {
                 <p className="price">{formatCurrency(price)}</p>
                 <Button
                   handleClick={() => {
+                    setShowHeader(true);
                     toast.success(`${title} was added to cart!`);
                     onAdd(product.attributes, 1);
                   }}
