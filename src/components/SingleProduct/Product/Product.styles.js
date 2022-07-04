@@ -73,9 +73,11 @@ export const RightSide = styled.div`
   width: 75%;
   max-width: 50rem;
   margin: auto;
+  padding-bottom: calc(var(--footer-height) * 2);
 
   @media screen and (min-width: 768px) {
     padding-top: 6rem;
+    padding-bottom: 0;
   }
 `;
 

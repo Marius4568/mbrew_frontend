@@ -7,7 +7,7 @@ export const Header = styled(motion.header)`
 
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--max-supported-width);
   position: fixed;
   top: 0;
   z-index: 100;

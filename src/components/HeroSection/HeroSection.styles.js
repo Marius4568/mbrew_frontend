@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const HeroSection = styled.div`
-  /* background-color: #eee; */
   height: 100vh;
 
   min-height: 30rem;
   width: 100vw;
-  max-width: 1920px;
+  max-width: var(--max-supported-width);
   position: relative;
-  top: -10rem;
+  top: calc(var(--header-height-mobile) / -1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,10 +19,10 @@ export const HeroSection = styled.div`
   }
 
   @media (min-width: 500px) {
-    height: calc(100vh + 6.25rem);
+    height: calc(100vh + var(--header-height-desktop));
     max-height: 45rem;
     min-height: 45rem;
-    top: -6.25rem;
+    top: calc(var(--header-height-desktop) / -1);
     align-items: flex-start;
   }
 
@@ -104,7 +103,7 @@ export const HeroContent = styled.div`
   @media (min-width: 1000px) {
     flex-direction: row;
     margin-left: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: var(--header-height-mobile);
   }
 `;
 
@@ -116,7 +115,7 @@ export const LeftSide = styled.div`
   justify-content: center;
 
   @media (min-width: 500px) {
-    padding-top: 10rem;
+    padding-top: var(--header-height-mobile);
     text-align: left;
     align-items: flex-start;
   }
@@ -197,7 +196,7 @@ export const RightSide = styled.div`
     width: 17rem;
     height: 17rem;
     right: 3rem;
-    bottom: 6.25rem;
+    bottom: var(--header-height-desktop);
   }
 
   @media (min-width: 768px) {

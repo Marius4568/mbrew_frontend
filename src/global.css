@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
   --main-dark-color: #000;
   --main-light-color: rgba(255, 255, 255, 1);
   --accent-yellow-color: #f1e468;
@@ -9,12 +12,19 @@
   --accent-red-color: #ff3a31;
   --accent-green-color: #3d7434;
   --accent-grey-color: #d9d9d9;
+
+  --header-height-mobile: 10rem;
+  --header-height-desktop: 6.25rem;
+
+  --footer-height: 5rem;
+
+  --max-supported-width: 1920px;
+
   scroll-behavior: smooth;
 }
 
 body,
 html {
-  font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   position: relative;
   margin: 0;
@@ -22,8 +32,7 @@ html {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: 'Fugaz One', cursive;
 }
 
@@ -33,10 +42,10 @@ a {
 }
 
 #root {
-  max-width: 1920px;
+  max-width: var(--max-supported-width);
   margin: auto;
   position: relative;
-  padding: 9.75rem 0 12rem 0;
+  padding-top: var(--header-height-mobile);
   overflow: hidden;
   min-height: 100vh;
   height: 100%;
@@ -44,10 +53,6 @@ a {
 
 @media (min-width: 500px) {
   #root {
-    padding-top: 6.25rem;
+    padding-top: var(--header-height-desktop);
   }
 }
-
-/* .toast-position {
-  top: 1rem !important;
-} */

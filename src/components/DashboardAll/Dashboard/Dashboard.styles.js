@@ -36,7 +36,6 @@ export const DashboardSideBar = styled.div`
     top: 0;
     bottom: 0;
     left: 0;
-    /* height: calc(100% - 12rem); */
     background-color: var(--main-light-color);
     width: 20vw;
     max-width: 25rem;
@@ -47,15 +46,12 @@ export const DashboardSideBar = styled.div`
       text-align: left;
     }
   }
-
-  @media (min-width: 1920px) {
-  }
 `;
 
 export const DashboardContent = styled.div`
   flex: 2;
   min-height: 25rem;
-  height: calc(70vh - 2rem);
+  padding-bottom: calc(var(--header-height-desktop) + 4rem);
   overflow-y: none;
 
   @media (min-width: 768px) {

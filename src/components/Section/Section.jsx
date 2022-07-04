@@ -5,10 +5,10 @@ import * as S from './Section.styles.js';
 const Section = ({ children, title, className }) => {
   return (
     <S.Section className={className}>
-      <h3>
+      <h2>
         {title}
         <span> .</span>
-      </h3>
+      </h2>
       <S.SectionInner>{children}</S.SectionInner>
     </S.Section>
   );

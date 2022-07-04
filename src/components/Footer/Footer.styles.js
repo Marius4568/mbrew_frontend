@@ -4,7 +4,7 @@ export const Footer = styled.footer`
   background-color: var(--main-dark-color);
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.05), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.05);
   width: 100%;
-  max-width: 1920px;
+  max-width: var(--max-supported-width);
   height: 5rem;
   /* margin-top: 5rem; */
   /* margin-bottom: -5rem; */

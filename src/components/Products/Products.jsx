@@ -28,7 +28,7 @@ const Products = () => {
   if (status === 'loading') {
     return (
       <S.ProductsSection title="Selection">
-        <S.Products>
+        <S.Products id="products">
           <S.ProductsInnerWrap>
             <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
             <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
@@ -55,7 +55,11 @@ const Products = () => {
             return (
               <S.Product key={slug}>
                 <Link to={`/product/${slug}`}>
-                  <div className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
+                  <div
+                    className="imgWrapper"
+                    color1={colorScheme && colorScheme.color1}
+                    color2={colorScheme && colorScheme.color2}
+                  >
                     <img src={imageSrc} alt="" />
                   </div>
                 </Link>

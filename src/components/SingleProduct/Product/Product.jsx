@@ -47,7 +47,11 @@ const Product = () => {
     <>
       <S.Product>
         <S.LeftSide>
-          <S.ImgWrapper className="imgWrapper" color1={colorScheme.color1} color2={colorScheme.color2}>
+          <S.ImgWrapper
+            className="imgWrapper"
+            color1={colorScheme && colorScheme.color1}
+            color2={colorScheme && colorScheme.color2}
+          >
             <img src={imageSrc} alt={title} />
           </S.ImgWrapper>
         </S.LeftSide>

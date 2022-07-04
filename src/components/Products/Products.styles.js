@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import Section from '../Section/Section';
 
 export const ProductsSection = styled(Section)`
-  margin-top: -7rem;
+  margin-top: calc(var(--header-height-desktop) / -1);
+  padding-bottom: calc(var(--header-height-mobile));
 
   @media (min-width: 500px) {
-    margin-top: -3rem;
+    margin-top: calc(var(--header-height-desktop) / -2);
   }
 
   @media (min-width: 1000px) {
@@ -105,8 +106,3 @@ export const Product = styled.div`
     font-size: 0.9rem;
   }
 `;
-
-// ${(props) => {
-//   console.log(props.children[0].props.children.props.color2);
-//   return props.children[1].props.color2;
-// }}

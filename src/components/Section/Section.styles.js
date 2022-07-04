@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Section = styled.div`
   width: 100%;
 
-  > h3 {
+  > h2 {
     text-align: center;
     font-size: 2rem;
 
@@ -13,14 +13,14 @@ export const Section = styled.div`
   }
 
   @media (min-width: 500px) {
-    > h3 {
+    > h2 {
       text-align: center;
       font-size: 2.2rem;
     }
   }
 
   @media (min-width: 768px) {
-    > h3 {
+    > h2 {
       text-align: center;
       font-size: 2.5rem;
     }
