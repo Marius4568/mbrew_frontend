@@ -4,7 +4,7 @@ const ShopContext = createContext();
 
 export const GlobalShopContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
+  const [showHeader, setShowHeader] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [qty, setQty] = useState(1);
   const [totalQuantities, setTotalQuantities] = useState(0);

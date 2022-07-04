@@ -38,6 +38,14 @@ const Header = () => {
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
+    // Initial state
+    if (y === 0) {
+      if (showHeader) {
+        setShowHeader(false);
+      }
+      return setStyleVariant(variants.initial);
+    }
+
     // When scrolling up
     if (scrollY?.current < scrollY?.prev && scrollY?.current > 0) {
       setStyleVariant(variants.visible);
@@ -54,11 +62,6 @@ const Header = () => {
         return setStyleVariant(variants.hiddenMobile);
       }
       setStyleVariant(variants.hidden);
-    }
-
-    // Initial state
-    else if (y === 0) {
-      setStyleVariant(variants.initial);
     }
   }
 
