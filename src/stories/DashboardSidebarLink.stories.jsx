@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardSidebarLink from './DashboardSidebarLink';
+import DashboardSidebarLink from '../components/DashboardAll/DashboardSidebarLink/DashboardSidebarLink';
 
 export default {
   title: 'Components/DashboardSidebarLink',

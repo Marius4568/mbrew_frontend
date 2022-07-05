@@ -34,6 +34,10 @@ export const PaymentsTableWrap = styled.div`
     .processing-icon {
       fill: var(--accent-grey-color);
     }
+
+    .requires-payment-method-icon {
+      fill: var(--accent-yellow-color);
+    }
   }
 
   thead {

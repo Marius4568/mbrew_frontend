@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingProductSkeleton from './LoadingProductSkeleton';
+import LoadingProductSkeleton from '../components/Loading/LoadingProductSkeleton/LoadingProductSkeleton';
 
 export default {
   title: 'Components/LoadingProductSkeleton',

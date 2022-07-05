@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from './Product';
+import Product from '../components/SingleProduct/Product/Product';
 
 export default {
   title: 'Components/Product',

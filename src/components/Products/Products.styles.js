@@ -4,7 +4,6 @@ import Section from '../Section/Section';
 
 export const ProductsSection = styled(Section)`
   margin-top: calc(var(--header-height-desktop) / -1);
-  padding-bottom: calc(var(--header-height-mobile));
 
   @media (min-width: 500px) {
     margin-top: calc(var(--header-height-desktop) / -2);

@@ -1,5 +1,5 @@
 import React from 'react';
-import SuccessSection from './SuccessSection';
+import SuccessSection from '../components/SuccessSection/SuccessSection';
 
 export default {
   title: 'Components/SuccessSection',

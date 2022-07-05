@@ -1,5 +1,5 @@
 import React from 'react';
-import PaymentsTable from './PaymentsTable';
+import PaymentsTable from '../components/DashboardAll/PaymentsTable/PaymentsTable';
 
 export default {
   title: 'Components/PaymentsTable',

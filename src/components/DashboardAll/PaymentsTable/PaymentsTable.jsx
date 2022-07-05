@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './PaymentsTable.styles.js';
-
+// MUI Icons
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 
+// Components
 import Section from '../../Section/Section';
 
 import { useQuery } from 'react-query';
@@ -36,7 +38,7 @@ const PaymentsTable = ({ children }) => {
   const { data, status } = useQuery('payments', () => getPaymentsData(token));
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <Section title="Payments">Loading...</Section>;
   }
 
   if (status === 'error' || data.error) {
@@ -70,6 +72,9 @@ const PaymentsTable = ({ children }) => {
                         <CheckCircleOutlineIcon className="success-icon"></CheckCircleOutlineIcon>
                       )}
                       {item.status === 'processing' && <AccessTimeIcon className="processing-icon"></AccessTimeIcon>}
+                      {item.status === 'requires_payment_method' && (
+                        <CreditCardIcon className="requires-payment-method-icon"></CreditCardIcon>
+                      )}
                       <span>{item.status}</span>
                     </div>
                   </td>

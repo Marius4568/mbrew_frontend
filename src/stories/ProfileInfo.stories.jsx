@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileInfo from './ProfileInfo';
+import ProfileInfo from '../components/DashboardAll/ProfileInfo/ProfileInfo';
 
 export default {
   title: 'Components/ProfileInfo',

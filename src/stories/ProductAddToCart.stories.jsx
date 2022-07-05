@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductAddToCart from './ProductAddToCart';
+import ProductAddToCart from '../components/SingleProduct/ProductAddToCart/ProductAddToCart';
 
 export default {
   title: 'Components/ProductAddToCart',

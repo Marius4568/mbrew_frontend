@@ -10,7 +10,7 @@ export const SuccessSection = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: calc(var(--footer-height) * 3);
+
   min-width: 15rem;
   max-width: 70rem;
 
@@ -53,6 +53,7 @@ export const ThanksMessage = styled.p`
 
   span {
     display: block;
+    margin-top: 0.5rem;
     /* width: 90%; */
     font-weight: 700;
   }

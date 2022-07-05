@@ -42,9 +42,7 @@ const SuccessSection = ({ children }) => {
     return <div>Error :(</div>;
   }
 
-  console.log(data, data.order);
-
-  const { amount_total, total_details, customer_details } = data.order;
+  const { amount_total, amount_subtotal, total_details, customer_details } = data.order;
 
   return (
     <Section title="Success">
@@ -73,6 +71,10 @@ const SuccessSection = ({ children }) => {
               <p className="details-title">Total Cost: </p>
 
               <div className="details-wrap">
+                <div>
+                  <span>Items cost: </span>
+                  <span>{formatCurrency(amount_subtotal / 100)}</span>
+                </div>
                 <div>
                   <span>Discount: </span>
                   <span>{formatCurrency(total_details.amount_discount / 100)}</span>
@@ -109,7 +111,7 @@ const SuccessSection = ({ children }) => {
               <div className="details-wrap">
                 {Object.entries(customer_details.address).map((detail) => {
                   return (
-                    <div>
+                    <div key={detail[0]}>
                       <span>{detail[1] && formatStripeProperty(detail[0]) + ': '}</span>
                       <span>{detail[1] && detail[1]}</span>
                     </div>

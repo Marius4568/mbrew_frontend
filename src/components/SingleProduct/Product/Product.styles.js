@@ -7,6 +7,11 @@ export const Product = styled.div`
   flex-direction: column;
   width: 100%;
   margin: auto;
+  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height));
+
+  @media screen and (min-width: 500px) {
+    min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height));
+  }
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -73,7 +78,6 @@ export const RightSide = styled.div`
   width: 75%;
   max-width: 50rem;
   margin: auto;
-  padding-bottom: calc(var(--footer-height) * 2);
 
   @media screen and (min-width: 768px) {
     padding-top: 6rem;

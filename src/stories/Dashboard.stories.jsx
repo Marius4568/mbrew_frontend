@@ -1,5 +1,5 @@
 import React from 'react';
-import Dashboard from './Dashboard';
+import Dashboard from '../components/DashboardAll/Dashboard/Dashboard';
 
 export default {
   title: 'Components/Dashboard',

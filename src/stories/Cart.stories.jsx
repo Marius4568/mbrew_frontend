@@ -1,5 +1,5 @@
 import React from 'react';
-import Cart from './Cart';
+import Cart from '../components/CartAll/Cart/Cart';
 
 export default {
   title: 'Components/Cart',

@@ -1,5 +1,5 @@
 import React from 'react';
-import CartItem from './CartItem';
+import CartItem from '../components/CartAll/CartItem/CartItem';
 
 export default {
   title: 'Components/CartItem',

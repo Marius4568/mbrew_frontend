@@ -1,5 +1,5 @@
 import React from 'react';
-import Notification from './Notification';
+import Notification from '../components/Notification/Notification';
 
 export default {
   title: 'Components/Notification',

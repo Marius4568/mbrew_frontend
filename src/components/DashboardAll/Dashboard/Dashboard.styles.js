@@ -6,6 +6,12 @@ export const Dashboard = styled.div`
   flex-direction: column;
   justify-content: center;
   width: calc(100% - 4rem);
+  min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height));
+
+  @media screen and (min-width: 500px) {
+    min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height));
+  }
+
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -40,7 +46,7 @@ export const DashboardSideBar = styled.div`
     width: 20vw;
     max-width: 25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    padding: 12rem 2rem 0 2rem;
+    padding: calc(var(--header-height-desktop) + 4rem) 2rem 0 2rem;
 
     .dashboard-username {
       text-align: left;
@@ -51,7 +57,6 @@ export const DashboardSideBar = styled.div`
 export const DashboardContent = styled.div`
   flex: 2;
   min-height: 25rem;
-  padding-bottom: calc(var(--header-height-desktop) + 4rem);
   overflow-y: none;
 
   @media (min-width: 768px) {

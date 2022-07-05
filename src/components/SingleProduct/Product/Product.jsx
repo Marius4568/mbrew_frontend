@@ -32,7 +32,7 @@ const Product = () => {
   });
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return <S.Product>Loading...</S.Product>;
   }
 
   if (status === 'error') {
