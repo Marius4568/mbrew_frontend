@@ -35,7 +35,13 @@ const SuccessSection = ({ children }) => {
   const { data, status } = useQuery('order', () => getOrderData(sessionId));
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return (
+      <Section title="Success">
+        <S.SuccessSection>
+          <p>Loading</p>
+        </S.SuccessSection>
+      </Section>
+    );
   }
 
   if (status === 'error' || data.error) {

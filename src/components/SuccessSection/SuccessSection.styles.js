@@ -5,12 +5,12 @@ import Button from '../Button/Button';
 export const SuccessSection = styled.div`
   border-radius: 0.2rem;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.05), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.05);
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-
+  min-height: 100vh;
   min-width: 15rem;
   max-width: 70rem;
 

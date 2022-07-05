@@ -6,6 +6,8 @@ import Section from '../../Section/Section';
 
 import { capitalize } from '../../../util/capitalize';
 
+import ContentTransition from '../../../animations/transitions/ContentTransition.jsx';
+
 import moon from '../../../assets/img/mbrewMoon.svg';
 
 const ProfileInfo = ({ children }) => {
@@ -13,22 +15,24 @@ const ProfileInfo = ({ children }) => {
   console.log(firstName, lastName, email);
 
   return (
-    <Section title="Info">
-      <S.ProfileInfo>
-        <img className="moon" src={moon} alt="moon background" />
-        <S.ProfilePicture>
-          <span>{firstName && lastName && firstName[0].toUpperCase() + lastName[0].toUpperCase()}</span>
-        </S.ProfilePicture>
-        <S.ProfileName>
-          <span>{firstName && lastName && `${capitalize(firstName)} ${capitalize(lastName)}`}</span>
-        </S.ProfileName>
-        <S.ProfileEmail>
-          <span>{email && email}</span>
-        </S.ProfileEmail>
+    <ContentTransition>
+      <Section title="Info">
+        <S.ProfileInfo>
+          <img className="moon" src={moon} alt="moon background" />
+          <S.ProfilePicture>
+            <span>{firstName && lastName && firstName[0].toUpperCase() + lastName[0].toUpperCase()}</span>
+          </S.ProfilePicture>
+          <S.ProfileName>
+            <span>{firstName && lastName && `${capitalize(firstName)} ${capitalize(lastName)}`}</span>
+          </S.ProfileName>
+          <S.ProfileEmail>
+            <span>{email && email}</span>
+          </S.ProfileEmail>
 
-        {children}
-      </S.ProfileInfo>
-    </Section>
+          {children}
+        </S.ProfileInfo>
+      </Section>
+    </ContentTransition>
   );
 };
 
