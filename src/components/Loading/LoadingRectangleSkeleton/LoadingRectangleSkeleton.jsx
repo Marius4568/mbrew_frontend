@@ -7,3 +7,7 @@ const LoadingRectangleSkeleton = ({ width, height, margin }) => {
 };
 
 export default LoadingRectangleSkeleton;
+
+//
+
+//

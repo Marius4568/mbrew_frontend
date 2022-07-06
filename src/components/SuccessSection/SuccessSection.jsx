@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './SuccessSection.styles.js';
 
+import Spinner from '../Loading/Spinner/Spinner';
+
 import { useNavigate } from 'react-router-dom';
 
 import { formatCurrency } from '../../util/formatCurrency';
@@ -38,7 +40,7 @@ const SuccessSection = ({ children }) => {
     return (
       <Section title="Success">
         <S.SuccessSection>
-          <p>Loading</p>
+          <Spinner width="20vmin" height="20vmin" />
         </S.SuccessSection>
       </Section>
     );
