@@ -24,9 +24,9 @@ const CartItem = (props) => {
       </S.LeftSide>
       <S.RightSide>
         <S.QuantityControls>
-          <S.Add onClick={() => onAdd(item, 1)}></S.Add>
-          <S.ItemQuantity>{quantity}</S.ItemQuantity>
           <S.Substract onClick={() => onRemove(item)}></S.Substract>
+          <S.ItemQuantity>{quantity}</S.ItemQuantity>
+          <S.Add onClick={() => onAdd(item, 1)}></S.Add>
         </S.QuantityControls>
 
         <S.RemoveItem handleClick={() => onRemove(item, quantity)}>Remove</S.RemoveItem>
@@ -35,8 +35,6 @@ const CartItem = (props) => {
   );
 };
 
-// CartItem.propTypes = {
-//   children: PropTypes.string.isRequired,
-// };
+// CartItem.propTypes = {};
 
 export default CartItem;

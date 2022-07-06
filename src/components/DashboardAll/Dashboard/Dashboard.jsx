@@ -35,6 +35,7 @@ const Dashboard = ({ userName, children }) => {
 
 Dashboard.propTypes = {
   children: PropTypes.node,
+  userName: PropTypes.string,
 };
 
 export default Dashboard;

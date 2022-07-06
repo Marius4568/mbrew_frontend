@@ -11,7 +11,9 @@ const DashboardSidebarLink = ({ title, handleClick, className }) => {
 };
 
 DashboardSidebarLink.propTypes = {
-  children: PropTypes.node,
+  title: PropTypes.string,
+  handleClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default DashboardSidebarLink;

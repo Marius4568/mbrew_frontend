@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import * as S from './Product.styles.js';
 
 import Spinner from '../../Loading/Spinner/Spinner.jsx';
@@ -12,7 +11,6 @@ import { useQuery } from 'react-query';
 import { request } from 'graphql-request';
 import { productQuery } from '../../../queries/graphqlQueries';
 import { formatCurrency } from '../../../util/formatCurrency';
-// import { Link } from 'react-router-dom';
 import ProductAddToCart from '../ProductAddToCart/ProductAddToCart';
 
 import { useGlobalShopContext } from '../../../contexts/shopContext';
@@ -92,9 +90,5 @@ const Product = () => {
     </>
   );
 };
-
-// Product.propTypes = {
-//   children: PropTypes.string.isRequired,
-// };
 
 export default Product;

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import * as S from './Header.styles.js';
 
 import { AnimatePresence } from 'framer-motion';
@@ -38,6 +37,7 @@ const Header = () => {
 
   function update(y) {
     const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
     // Initial state
     if (y === 0) {
@@ -53,7 +53,12 @@ const Header = () => {
     }
 
     // When scrolling down and we are at least 160px down
-    else if (scrollY?.current > 160 && scrollY?.current > scrollY?.prev) {
+    if (scrollY?.current > 0 && scrollY?.current > scrollY?.prev) {
+      setStyleVariant(variants.visible);
+    }
+
+    // When scrolling down and we are at least half the viewport height down
+    if (scrollY?.current > windowHeight / 2 && scrollY?.current > scrollY?.prev) {
       setShowHeader(false);
 
       if (windowWidth < 501) {

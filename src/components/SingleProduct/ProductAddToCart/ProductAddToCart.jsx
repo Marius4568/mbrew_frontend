@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as S from './ProductAddToCart.styles.js';
 
 import { useGlobalShopContext } from '../../../contexts/shopContext';
@@ -20,6 +20,10 @@ const ProductAddToCart = ({ children }) => {
       </S.QuantityContainer>
     </S.ProductAddToCart>
   );
+};
+
+ProductAddToCart.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ProductAddToCart;

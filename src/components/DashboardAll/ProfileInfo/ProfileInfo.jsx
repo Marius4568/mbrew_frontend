@@ -12,7 +12,6 @@ import moon from '../../../assets/img/mbrewMoon.svg';
 
 const ProfileInfo = ({ children }) => {
   const { firstName, lastName, email } = JSON.parse(localStorage.getItem('userData'));
-  console.log(firstName, lastName, email);
 
   return (
     <ContentTransition>

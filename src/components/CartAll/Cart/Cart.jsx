@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+
 import * as S from './Cart.styles.js';
 
 import { useGlobalShopContext } from '../../../contexts/shopContext';
@@ -91,7 +91,6 @@ const Cart = () => {
                   window.location.href = `${process.env.REACT_APP_FRONTEND_LINK}#products`;
                   document.querySelector('html').style.overflowY = 'auto';
                   document.querySelector('.cart-wrapper').style.overflow = 'hidden';
-                  document.querySelector('.cart-wrapper').style.cursor = 'default';
                   setShowCart(false);
                 }}
               >
@@ -118,9 +117,5 @@ const Cart = () => {
     </S.CartWrapper>
   );
 };
-
-// Cart.propTypes = {
-//   children: PropTypes.string.isRequired,
-// };
 
 export default Cart;

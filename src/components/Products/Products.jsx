@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import * as S from './Products.styles.js';
 
 import { Link } from 'react-router-dom';
@@ -90,9 +89,5 @@ const Products = () => {
     </S.ProductsSection>
   );
 };
-
-// Products.propTypes = {
-//   children: PropTypes.string.isRequired,
-// };
 
 export default Products;

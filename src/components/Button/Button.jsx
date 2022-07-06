@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Button.styles.js';
 
-const Button = ({ type, children, handleClick, className }) => {
+const Button = ({ children, handleClick, className }) => {
   return (
-    <S.Button className={className} onClick={handleClick} type={type}>
+    <S.Button className={className} onClick={handleClick}>
       {children}
     </S.Button>
   );
@@ -12,13 +12,8 @@ const Button = ({ type, children, handleClick, className }) => {
 
 Button.propTypes = {
   children: PropTypes.node,
-  type: PropTypes.oneOf(['submit', 'reset', 'button', 'delete']),
   handleClick: PropTypes.func,
   className: PropTypes.string,
-};
-
-Button.defaultProps = {
-  type: 'button',
 };
 
 export default Button;

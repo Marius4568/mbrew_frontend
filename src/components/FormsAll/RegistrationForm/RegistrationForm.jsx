@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
 import * as S from './RegistrationForm.styles.js';
 // Images
@@ -8,6 +7,7 @@ import formLemon from '../../../assets/img/formLemon.png';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // Components, component data
+import ContentTransition from '../../../animations/transitions/ContentTransition';
 import FormInput from '../FormInput/FormInput.jsx';
 import { registrationInputs } from '../formInputs';
 import Button from '../../Button/Button.jsx';
@@ -85,38 +85,40 @@ const RegistrationForm = () => {
 
   return (
     <S.RegistrationFormWrapper>
-      <form onSubmit={formik.handleSubmit}>
+      <ContentTransition>
+        <form onSubmit={formik.handleSubmit}>
+          <S.LemonDecoration src={formLemon} />
+          {registrationInputs.map((input) => (
+            <div key={input.id}>
+              <FormInput
+                value={formik.values[input.name]}
+                {...input}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched[input.name] && formik.errors[input.name] ? (
+                <p className="error-message">{formik.errors[input.name]}</p>
+              ) : null}
+            </div>
+          ))}
+
+          <Button className={buttonLoading} type="submit">
+            Submit
+          </Button>
+
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            pauseOnFocusLoss={false}
+            pauseOnHover={false}
+            transition={Slide}
+          />
+          <p>
+            Already have an account? <Link to="/login">Login here</Link>
+          </p>
+        </form>
         <S.LemonDecoration src={formLemon} />
-        {registrationInputs.map((input) => (
-          <div key={input.id}>
-            <FormInput
-              value={formik.values[input.name]}
-              {...input}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched[input.name] && formik.errors[input.name] ? (
-              <p className="error-message">{formik.errors[input.name]}</p>
-            ) : null}
-          </div>
-        ))}
-
-        <Button className={buttonLoading} type="submit">
-          Submit
-        </Button>
-
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          pauseOnFocusLoss={false}
-          pauseOnHover={false}
-          transition={Slide}
-        />
-        <p>
-          Already have an account? <Link to="/login">Login here</Link>
-        </p>
-      </form>
-      <S.LemonDecoration src={formLemon} />
+      </ContentTransition>
     </S.RegistrationFormWrapper>
   );
 };

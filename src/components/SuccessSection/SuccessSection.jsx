@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import * as S from './SuccessSection.styles.js';
 
 import Spinner from '../Loading/Spinner/Spinner';
@@ -26,7 +25,7 @@ const getOrderData = async (sessionId) => {
   }
 };
 
-const SuccessSection = ({ children }) => {
+const SuccessSection = () => {
   const navigate = useNavigate();
 
   const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -138,10 +137,6 @@ const SuccessSection = ({ children }) => {
       </S.SuccessSection>
     </Section>
   );
-};
-
-SuccessSection.propTypes = {
-  children: PropTypes.node,
 };
 
 export default SuccessSection;

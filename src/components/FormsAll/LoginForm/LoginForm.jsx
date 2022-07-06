@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
 
 // Images
@@ -11,6 +10,7 @@ import { useAuth } from '../../../contexts/authContext';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // Components, component data
+import ContentTransition from '../../../animations/transitions/ContentTransition';
 import FormInput from '../FormInput/FormInput.jsx';
 import { loginInputs } from '../formInputs';
 import Button from '../../Button/Button.jsx';
@@ -76,38 +76,40 @@ const LoginForm = () => {
 
   return (
     <S.LoginFormWrapper>
-      <form onSubmit={formik.handleSubmit}>
-        <S.LemonDecoration src={formLemon} />
-        {loginInputs.map((input) => (
-          <div key={input.id}>
-            <FormInput
-              value={formik.values[input.name]}
-              {...input}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched[input.name] && formik.errors[input.name] ? (
-              <p className="error-message">{formik.errors[input.name]}</p>
-            ) : null}
-          </div>
-        ))}
+      <ContentTransition>
+        <form onSubmit={formik.handleSubmit}>
+          <S.LemonDecoration src={formLemon} />
+          {loginInputs.map((input) => (
+            <div key={input.id}>
+              <FormInput
+                value={formik.values[input.name]}
+                {...input}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched[input.name] && formik.errors[input.name] ? (
+                <p className="error-message">{formik.errors[input.name]}</p>
+              ) : null}
+            </div>
+          ))}
 
-        <Button className={buttonLoading} type="submit">
-          Login
-        </Button>
+          <Button className={buttonLoading} type="submit">
+            Login
+          </Button>
 
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          pauseOnFocusLoss={false}
-          pauseOnHover={false}
-          transition={Slide}
-        />
-        <p>
-          Don't have an account yet? <Link to="/register">Register here</Link>
-        </p>
-        <S.LemonDecoration src={formLemon} />
-      </form>
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            pauseOnFocusLoss={false}
+            pauseOnHover={false}
+            transition={Slide}
+          />
+          <p>
+            Don't have an account yet? <Link to="/register">Register here</Link>
+          </p>
+          <S.LemonDecoration src={formLemon} />
+        </form>
+      </ContentTransition>
     </S.LoginFormWrapper>
   );
 };

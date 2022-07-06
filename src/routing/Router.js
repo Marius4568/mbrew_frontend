@@ -9,6 +9,7 @@ import SuccessPage from '../pages/SuccessPage/SuccessPage';
 import Profile from '../pages/Profile/Profile';
 import Header from '../components/HeaderAll/Header/Header';
 import Footer from '../components/Footer/Footer';
+import NotFound from '../components/NotFound/NotFound';
 
 import { PrivateRoutes } from './PrivateRoutes';
 import ScrollToTop from './ScrollToTop';
@@ -29,6 +30,8 @@ const Router = () => {
         <Route element={<PrivateRoutes />}>
           <Route exact path="/profile" element={<Profile />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

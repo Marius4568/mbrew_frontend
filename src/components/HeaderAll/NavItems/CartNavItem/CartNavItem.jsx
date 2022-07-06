@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import * as S from './CartNavItem.styles.js';
 
 import { motion } from 'framer-motion';
@@ -34,5 +33,3 @@ const CartNavItem = () => {
 };
 
 export default CartNavItem;
-
-// {showCart && <Cart />}
