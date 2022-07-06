@@ -45,7 +45,13 @@ const SuccessSection = ({ children }) => {
   }
 
   if (status === 'error' || data.error) {
-    return <div>Error :(</div>;
+    return (
+      <Section title="Success">
+        <S.SuccessSection>
+          <p>{data.error}</p>
+        </S.SuccessSection>
+      </Section>
+    );
   }
 
   const { amount_total, amount_subtotal, total_details, customer_details } = data.order;

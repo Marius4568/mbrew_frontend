@@ -26,28 +26,32 @@ const LoginForm = () => {
 
   // Handling the posting of form data
   const sendLoginData = async (reqBody) => {
-    setbuttonLoading('loading');
+    try {
+      setbuttonLoading('loading');
+      const data = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}user/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reqBody),
+      });
 
-    const data = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}user/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(reqBody),
-    });
+      const res = await data.json();
 
-    const res = await data.json();
-
-    setbuttonLoading('');
-
-    if (res.error) {
-      toast.error(res.error);
-    }
-    if (res.msg === 'Successfully logged in') {
-      localStorage.setItem('token', res.token);
-      localStorage.setItem('userData', JSON.stringify(res.userData));
-      setToken(true);
-      navigate('/profile', { replace: true });
+      if (res.error) {
+        toast.error(res.error);
+      }
+      if (res.msg === 'Successfully logged in') {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('userData', JSON.stringify(res.userData));
+        setToken(true);
+        navigate('/profile', { replace: true });
+      }
+    } catch (err) {
+      setbuttonLoading('');
+      console.log(err);
+      toast.error(err.message);
+      return err.message;
     }
   };
 

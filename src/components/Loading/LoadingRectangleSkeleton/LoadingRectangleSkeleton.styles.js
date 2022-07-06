@@ -7,7 +7,7 @@ to {
   }
 `;
 
-export const LoadingProductSkeleton = styled.div`
+export const LoadingRectangleSkeleton = styled.div`
   border-radius: 0.2rem;
   padding: 0 1rem 1rem 1rem;
   background: rgb(237, 237, 237);

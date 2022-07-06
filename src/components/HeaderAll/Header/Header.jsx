@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import * as S from './Header.styles.js';
 
+import { AnimatePresence } from 'framer-motion';
+
 import Nav from '../Nav/Nav.jsx';
 import { useGlobalShopContext } from '../../../contexts/shopContext.js';
 import Cart from '../../CartAll/Cart/Cart';
@@ -35,7 +37,6 @@ const Header = () => {
   const [styleVariant, setStyleVariant] = useState(variants.initial);
 
   function update(y) {
-    const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
     // Initial state
@@ -50,12 +51,9 @@ const Header = () => {
     if (scrollY?.current < scrollY?.prev && scrollY?.current > 0) {
       setStyleVariant(variants.visible);
     }
-    // When scrolling down and we are between 0 and third window height down
-    else if (scrollY?.current > 0 && scrollY?.current < windowHeight / 3 && scrollY?.current > scrollY?.prev) {
-      setStyleVariant(variants.visible);
-    }
-    // When scrolling down and we are at least half window height down
-    else if (scrollY?.current > windowHeight / 2 && scrollY?.current > scrollY?.prev) {
+
+    // When scrolling down and we are at least 160px down
+    else if (scrollY?.current > 160 && scrollY?.current > scrollY?.prev) {
       setShowHeader(false);
 
       if (windowWidth < 501) {
@@ -72,7 +70,7 @@ const Header = () => {
   return (
     <S.Header variants={variants} animate={showHeader ? variants.visible : styleVariant} transition={{ duration: 0.3 }}>
       {<Nav />}
-      {showCart && <Cart />}
+      <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </S.Header>
   );
 };

@@ -2,16 +2,12 @@ import React from 'react';
 
 import { motion } from 'framer-motion';
 
-const animationConfiguration = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
-};
+import { fadeInFadeOut } from '../variants/fadeInFadeOut';
 
 const ContentTransition = ({ children }) => {
   return (
     <motion.div
-      variants={animationConfiguration}
+      variants={fadeInFadeOut}
       initial="initial"
       animate="animate"
       exit="exit"

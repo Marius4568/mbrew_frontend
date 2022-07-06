@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Button from '../Button/Button';
 // import Section from '../Section/Section';
-import LoadingProductSkeleton from '../Loading/LoadingProductSkeleton/LoadingProductSkeleton';
+import LoadingRectangleSkeleton from '../Loading/LoadingRectangleSkeleton/LoadingRectangleSkeleton';
 
 import { useGlobalShopContext } from '../../contexts/shopContext';
 
@@ -30,9 +30,9 @@ const Products = () => {
       <S.ProductsSection title="Selection">
         <S.Products id="products">
           <S.ProductsInnerWrap>
-            <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
-            <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
-            <LoadingProductSkeleton width="16rem" height="25rem"></LoadingProductSkeleton>
+            <LoadingRectangleSkeleton width="16rem" height="25rem"></LoadingRectangleSkeleton>
+            <LoadingRectangleSkeleton width="16rem" height="25rem"></LoadingRectangleSkeleton>
+            <LoadingRectangleSkeleton width="16rem" height="25rem"></LoadingRectangleSkeleton>
           </S.ProductsInnerWrap>
         </S.Products>
       </S.ProductsSection>

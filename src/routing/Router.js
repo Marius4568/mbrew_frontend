@@ -17,6 +17,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Header />
+
       <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -29,6 +30,7 @@ const Router = () => {
           <Route exact path="/profile" element={<Profile />} />
         </Route>
       </Routes>
+
       <Footer />
     </BrowserRouter>
   );

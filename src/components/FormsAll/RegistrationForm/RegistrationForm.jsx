@@ -25,25 +25,29 @@ const RegistrationForm = () => {
 
   // Handling the posting of form data
   const sendRegistrationData = async (reqBody) => {
-    setbuttonLoading('loading');
+    try {
+      setbuttonLoading('loading');
+      const data = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}user/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reqBody),
+      });
 
-    const data = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}user/register`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(reqBody),
-    });
+      const res = await data.json();
 
-    const res = await data.json();
-
-    setbuttonLoading('');
-
-    if (res.error) {
-      toast.error(res.error);
-    }
-    if (res.msg === 'User created') {
-      navigate('/login');
+      if (res.error) {
+        toast.error(res.error);
+      }
+      if (res.msg === 'User created') {
+        navigate('/login');
+      }
+    } catch (err) {
+      setbuttonLoading('');
+      toast.error(err.message);
+      console.log(err.message);
+      return err.message;
     }
   };
 

@@ -7,6 +7,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 
+import LoadingRectangleSkeleton from '../../Loading/LoadingRectangleSkeleton/LoadingRectangleSkeleton';
 // Components
 import Section from '../../Section/Section';
 
@@ -40,7 +41,11 @@ const PaymentsTable = ({ children }) => {
   const { data, status } = useQuery('payments', () => getPaymentsData(token));
 
   if (status === 'loading') {
-    return <Section title="Payments">Loading...</Section>;
+    return (
+      <Section title="Payments">
+        <LoadingRectangleSkeleton width="100%" height="25rem" margin="2rem 0 0 0" />
+      </Section>
+    );
   }
 
   if (status === 'error' || data.error) {

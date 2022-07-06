@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+import { motion } from 'framer-motion';
+
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
 import Button from '../../Button/Button';
 
-export const CartItem = styled.div`
+export const CartItem = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   width: calc(100%);

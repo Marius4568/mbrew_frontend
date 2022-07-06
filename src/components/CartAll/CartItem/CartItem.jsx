@@ -11,7 +11,7 @@ const CartItem = (props) => {
   const imgSrc = image.data.attributes.formats.thumbnail.url;
 
   return (
-    <S.CartItem>
+    <S.CartItem layout>
       <S.LeftSide>
         <S.ImgWrapper>
           <img src={imgSrc} alt={title} />

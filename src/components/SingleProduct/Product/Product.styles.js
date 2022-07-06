@@ -8,7 +8,7 @@ export const Product = styled.div`
   width: 100%;
   margin: auto;
   min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height));
-
+  position: relative;
   @media screen and (min-width: 500px) {
     min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height));
   }
@@ -103,10 +103,6 @@ export const Price = styled.p`
   text-align: center;
   margin-bottom: 1.5rem;
   width: calc(75% - 4rem);
-
-  /* @media screen and (min-width: 1200px) {
-width: 
-  } */
 `;
 
 export const Description = styled.div`
@@ -127,12 +123,6 @@ export const Description = styled.div`
       font-size: 1.5rem;
     }
   }
-
-  /* @media screen and (min-width: 1200px) {
-    > p {
-      font-size: 1.8rem;
-    }
-  } */
 `;
 
 export const AddToCartButton = styled(Button)``;

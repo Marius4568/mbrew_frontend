@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import * as S from './Product.styles.js';
 
+import Spinner from '../../Loading/Spinner/Spinner.jsx';
+
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -32,7 +34,11 @@ const Product = () => {
   });
 
   if (status === 'loading') {
-    return <S.Product>Loading...</S.Product>;
+    return (
+      <S.Product>
+        <Spinner width="20vmin" height="20vmin" />
+      </S.Product>
+    );
   }
 
   if (status === 'error') {

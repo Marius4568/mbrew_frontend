@@ -2,7 +2,11 @@ import styled from 'styled-components';
 
 import CloseIcon from '@mui/icons-material/Close';
 
-export const CartWrapper = styled.div`
+import Button from '../../Button/Button';
+
+import { motion } from 'framer-motion';
+
+export const CartWrapper = styled(motion.div)`
   position: absolute;
   width: 100%;
   min-height: 100vh;
@@ -16,7 +20,7 @@ export const CartWrapper = styled.div`
   cursor: pointer;
 `;
 
-export const InnerCartWrapper = styled.div`
+export const InnerCartWrapper = styled(motion.div)`
   width: 100vw;
 `;
 
@@ -44,40 +48,17 @@ export const CloseCart = styled(CloseIcon)`
   }
 `;
 
-export const EmptyCart = styled.div`
-  min-height: 100%;
-  top: 0;
-  width: calc(100% - 4rem);
-  padding: 2rem;
-  position: absolute;
-  z-index: 1;
-  background-color: var(--main-light-color);
-
+export const Cart = styled(motion.div)`
   cursor: default;
   display: grid;
   place-items: center;
+  min-height: 100vh;
 
   @media (min-width: 500px) {
     width: 26rem;
     right: 0;
   }
-`;
 
-export const EmptyCartInner = styled.div`
-  /* min-height: 20rem; */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  > span {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-`;
-
-export const Cart = styled.div`
   min-height: 100%;
   top: 0;
   width: calc(100% - 4rem);
@@ -87,6 +68,10 @@ export const Cart = styled.div`
   background-color: var(--main-light-color);
 
   cursor: default;
+`;
+
+export const CartInner = styled(motion.div)`
+  place-self: normal center;
 
   > p:nth-child(1) {
     font-size: 1.3rem;
@@ -121,5 +106,25 @@ export const Cart = styled.div`
       font-size: 1.3rem;
       padding: 2rem 0 1rem 0;
     }
+  }
+`;
+
+export const CartBottomWrap = styled(motion.div)`
+  width: 100%;
+`;
+
+export const CheckoutButton = styled(Button)`
+  width: 100%;
+`;
+
+export const EmptyCartInner = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > span {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 `;
