@@ -1,5 +1,5 @@
 import React from 'react';
-import CartNavItem from './CartNavItemm';
+import CartNavItem from '../components/HeaderAll/NavItems/CartNavItem/CartNavItem';
 
 export default {
   title: 'Components/CartNavItem',

@@ -12,8 +12,8 @@ const spin = keyframes`
 export const Spinner = styled.div`
   display: inline-block;
   position: absolute;
-  width: 80px;
-  height: 80px;
+  min-width: 7rem;
+  min-height: 7rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

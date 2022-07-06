@@ -25,7 +25,7 @@ export const Button = styled.button`
       left: -50%;
       top: -400%;
       width: 200%;
-      height: 800%;
+      height: 1000%;
       background-color: var(--main-dark-color);
       background-repeat: no-repeat;
       background-size: 100%;

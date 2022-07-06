@@ -1,11 +1,11 @@
 import React from 'react';
-import LoadingProductSkeleton from '../components/Loading/LoadingProductSkeleton/LoadingProductSkeleton';
+import LoadingRectangleSkeleton from '../components/Loading/LoadingRectangleSkeleton/LoadingRectangleSkeleton';
 
 export default {
-  title: 'Components/LoadingProductSkeleton',
-  component: LoadingProductSkeleton,
+  title: 'Components/LoadingRectangleSkeleton',
+  component: LoadingRectangleSkeleton,
 };
 
-export const PrimaryLoadingProductSkeleton = () => (
-  <LoadingProductSkeleton>Me LoadingProductSkeleton</LoadingProductSkeleton>
+export const PrimaryLoadingRectangleSkeleton = () => (
+  <LoadingRectangleSkeleton>Me LoadingRectangleSkeleton</LoadingRectangleSkeleton>
 );

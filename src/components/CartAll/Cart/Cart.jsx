@@ -52,6 +52,7 @@ const Cart = () => {
       onClick={() => {
         document.querySelector('html').style.overflowY = 'auto';
         document.querySelector('.cart-wrapper').style.overflow = 'hidden';
+        document.querySelector('.cart-wrapper').style.cursor = 'default';
         return setShowCart(false);
       }}
     >
@@ -60,6 +61,7 @@ const Cart = () => {
           onClick={() => {
             document.querySelector('html').style.overflowY = 'auto';
             document.querySelector('.cart-wrapper').style.overflow = 'hidden';
+            document.querySelector('.cart-wrapper').style.cursor = 'default';
             return setShowCart(false);
           }}
         >
@@ -89,6 +91,7 @@ const Cart = () => {
                   window.location.href = `${process.env.REACT_APP_FRONTEND_LINK}#products`;
                   document.querySelector('html').style.overflowY = 'auto';
                   document.querySelector('.cart-wrapper').style.overflow = 'hidden';
+                  document.querySelector('.cart-wrapper').style.cursor = 'default';
                   setShowCart(false);
                 }}
               >
