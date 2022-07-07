@@ -6,4 +6,4 @@ export default {
   component: HeroSection,
 };
 
-export const PrimaryHeroSection = () => <HeroSection>Me HeroSection</HeroSection>;
+export const PrimaryHeroSection = () => <HeroSection></HeroSection>;

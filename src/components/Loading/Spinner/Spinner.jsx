@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as S from './Spinner.styles.js';
 
 const Spinner = ({ width, height, margin }) => {
@@ -10,6 +10,12 @@ const Spinner = ({ width, height, margin }) => {
       <div></div>
     </S.Spinner>
   );
+};
+
+Spinner.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  margin: PropTypes.string,
 };
 
 export default Spinner;

@@ -2,10 +2,10 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { MemoryRouter } from 'react-router';
 import { QueryClientProvider, QueryClient } from 'react-query';
-
+import { GlobalShopContext } from '../src/contexts/shopContext';
+import { AuthContext } from '../src/contexts/authContext';
 const queryClient = new QueryClient();
 
-import 'normalize.css';
 import '../src/global.css';
 
 export const parameters = {
@@ -24,3 +24,11 @@ addDecorator((story) => (
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>{' '}
   </QueryClientProvider>
 ));
+
+export const decorators = [
+  (Story) => (
+    <GlobalShopContext>
+      <Story />
+    </GlobalShopContext>
+  ),
+];

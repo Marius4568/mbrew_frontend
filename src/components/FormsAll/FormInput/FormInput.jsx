@@ -1,8 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as S from './FormInput.styles.js';
 
-const FormInput = (props, children) => {
+const FormInput = (props) => {
   const { label, id, value, onChange, onBlur, ...inputProps } = props;
 
   return (
@@ -13,6 +13,12 @@ const FormInput = (props, children) => {
       </S.InputInnerWrap>
     </S.FormInput>
   );
+};
+
+FormInput.propTypes = {
+  value: PropTypes.object,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
 };
 
 export default FormInput;

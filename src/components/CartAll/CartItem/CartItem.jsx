@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as S from './CartItem.styles.js';
 
 import { formatCurrency } from '../../../util/formatCurrency.js';
@@ -35,6 +35,10 @@ const CartItem = (props) => {
   );
 };
 
-// CartItem.propTypes = {};
+CartItem.propTypes = {
+  item: PropTypes.object,
+  onRemove: PropTypes.func,
+  onAdd: PropTypes.func,
+};
 
 export default CartItem;

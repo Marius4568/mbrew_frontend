@@ -6,4 +6,4 @@ export default {
   component: Section,
 };
 
-export const PrimarySection = () => <Section>Me Section</Section>;
+export const PrimarySection = () => <Section title="Section"></Section>;
