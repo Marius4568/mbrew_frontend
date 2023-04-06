@@ -8,7 +8,7 @@ const CartItem = (props) => {
   const { ...item } = props.item;
   const { title, price, quantity, image } = item;
   const { onRemove, onAdd } = props;
-  const imgSrc = image.data.attributes.formats.thumbnail.url;
+  const imgSrc = image.data[0].attributes.formats.thumbnail.url;
 
   return (
     <S.CartItem layout>
