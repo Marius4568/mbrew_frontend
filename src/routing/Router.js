@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from '../pages/Home/Home';
@@ -14,7 +14,14 @@ import NotFound from '../components/NotFound/NotFound';
 import { PrivateRoutes } from './PrivateRoutes';
 import ScrollToTop from './ScrollToTop';
 
+import ReactGA from 'react-ga';
+  const TRACKING_ID = "G-7QJBGC239N";
+  ReactGA.initialize(TRACKING_ID);
+
 const Router = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <BrowserRouter>
       <Header />
