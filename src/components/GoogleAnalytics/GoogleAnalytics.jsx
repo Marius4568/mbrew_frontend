@@ -18,6 +18,8 @@ const GoogleAnalytics = () => {
       </Helmet>
     );
   };
+
+  export default GoogleAnalytics
   
   
   
