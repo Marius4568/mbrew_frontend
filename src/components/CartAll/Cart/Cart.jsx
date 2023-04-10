@@ -22,6 +22,7 @@ const Cart = () => {
     const userToken = localStorage.getItem('token');
     try {
       setbuttonLoading('loading');
+      console.log(process.env.REACT_APP_USERS_BACKEND_LINK)
       const res = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}stripe/create_checkout_session`, {
         method: 'POST',
         headers: {
@@ -30,7 +31,6 @@ const Cart = () => {
         body: JSON.stringify({ products, userToken }),
       });
       const data = await res.json();
-
       if (data.url) {
         window.location.href = data.url;
       }
