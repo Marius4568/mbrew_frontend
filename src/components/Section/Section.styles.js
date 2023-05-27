@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Section = styled.div`
   width: 100%;
+  padding-bottom: 10rem;
 
   > h2 {
     text-align: center;

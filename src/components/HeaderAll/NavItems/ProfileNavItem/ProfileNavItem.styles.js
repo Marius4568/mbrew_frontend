@@ -6,7 +6,7 @@ export const ProfileNavItem = styled.div`
   align-items: center;
 
   & .ProfileIconWrapper {
-    width: 1.5rem;
+    width: fit-content;
     height: 1.5rem;
     padding: 0.5rem;
     border-radius: 50%;

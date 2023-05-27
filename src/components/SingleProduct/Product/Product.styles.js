@@ -9,6 +9,7 @@ export const Product = styled.div`
   margin: auto;
   min-height: calc(100vh - var(--header-height-mobile) - var(--footer-height));
   position: relative;
+  padding-bottom: 10rem;
   @media screen and (min-width: 500px) {
     min-height: calc(100vh - var(--header-height-desktop) - var(--footer-height));
   }
@@ -106,22 +107,10 @@ export const Price = styled.p`
 `;
 
 export const Description = styled.div`
-  text-align: center;
   width: 75%;
   padding: 2rem;
-
-  > p {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
   > span {
     color: #a9a9a9;
-  }
-
-  @media screen and (min-width: 768px) {
-    > p {
-      font-size: 1.5rem;
-    }
   }
 `;
 

@@ -16,6 +16,7 @@ export const ProductsSection = styled(Section)`
 
 export const Products = styled.div`
   padding: 3rem;
+  padding-bottom: 0;
   width: calc(100% - 6rem);
 `;
 
@@ -26,6 +27,7 @@ export const ProductsInnerWrap = styled.div`
   justify-items: center;
   justify-content: center;
   grid-gap: 3rem;
+  margin-bottom: 10rem;
 `;
 
 export const Product = styled.div`

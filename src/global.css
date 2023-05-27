@@ -46,7 +46,7 @@ a {
   margin: auto;
   position: relative;
   padding-top: var(--header-height-mobile);
-  padding-bottom: calc(var(--footer-height) * 3);
+  /* padding-bottom: calc(var(--footer-height) * 3); */
   overflow: hidden;
   min-height: 100vh;
   height: 100%;

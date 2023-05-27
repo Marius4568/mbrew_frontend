@@ -75,7 +75,7 @@ const Product = () => {
             </S.AddToCartButton>
           </ProductAddToCart>
           <S.Description>
-            <p>Description:</p> <span>{description}</span>
+            <span>{description}</span>
           </S.Description>
         </S.RightSide>
         <ToastContainer

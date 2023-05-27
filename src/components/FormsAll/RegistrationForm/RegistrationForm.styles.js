@@ -10,6 +10,7 @@ export const RegistrationFormWrapper = styled.section`
   padding: 0;
   position: relative;
   margin-top: 2rem;
+  margin-bottom: 5rem;
 
   @media (min-width: 500px) {
     margin-top: 3rem;
