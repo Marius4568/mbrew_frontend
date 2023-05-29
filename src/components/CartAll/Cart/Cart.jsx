@@ -35,9 +35,11 @@ const Cart = () => {
         window.location.href = data.url;
       }
     } catch (err) {
-      setbuttonLoading('');
       console.error(err.message);
       return err.message;
+    }
+    finally {
+      setbuttonLoading('');
     }
   };
 

@@ -22,12 +22,13 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const { setToken } = useAuth();
 
-  const [buttonLoading, setbuttonLoading] = useState('');
+  const [loginButtonLoading, setLoginButtonLoading] = useState('');
+  const [loginAsGButtonLoading, setLoginAsGLoading] = useState('');
 
   // Handling the posting of form data
   const sendLoginData = async (reqBody) => {
     try {
-      setbuttonLoading('loading');
+      setLoginButtonLoading('loading');
       const data = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}user/login`, {
         method: 'POST',
         headers: {
@@ -48,10 +49,44 @@ const LoginForm = () => {
         navigate('/profile', { replace: true });
       }
     } catch (err) {
-      setbuttonLoading('');
       console.log(err);
       toast.error(err.message);
       return err.message;
+    }
+    finally {
+      setLoginButtonLoading('');
+    }
+  };
+
+  const guestLogin = async () => {
+    console.log("workin")
+    try {
+      setLoginAsGLoading('loading');
+      const data = await fetch(`${process.env.REACT_APP_USERS_BACKEND_LINK}user/guest_login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const res = await data.json();
+
+      if (res.error) {
+        toast.error(res.error);
+      }
+      if (res.msg === 'Successfully logged in as guest') {
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('userData', JSON.stringify(res.userData));
+        setToken(true);
+        navigate('/profile', { replace: true });
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error(err.message);
+      return err.message;
+    }
+    finally {
+      setLoginAsGLoading('');
     }
   };
 
@@ -93,8 +128,11 @@ const LoginForm = () => {
             </div>
           ))}
 
-          <Button className={buttonLoading} type="submit">
+          <Button className={loginButtonLoading}>
             Login
+          </Button>
+          <Button className={[loginAsGButtonLoading,"yellow-button"]} type="button" handleClick={guestLogin}>
+            Login as a Guest
           </Button>
 
           <ToastContainer

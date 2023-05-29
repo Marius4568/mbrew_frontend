@@ -19,10 +19,10 @@ const ProfileInfo = ({ children }) => {
         <S.ProfileInfo>
           <img className="moon" src={moon} alt="moon background" />
           <S.ProfilePicture>
-            <span>{firstName && lastName && firstName[0].toUpperCase() + lastName[0].toUpperCase()}</span>
+            <span>{firstName[0].toUpperCase() + (lastName[0]?.toUpperCase() || '')}</span>
           </S.ProfilePicture>
           <S.ProfileName>
-            <span>{firstName && lastName && `${capitalize(firstName)} ${capitalize(lastName)}`}</span>
+            <span>{firstName && lastName && `${capitalize(firstName)} ${lastName && capitalize(lastName)}`}</span>
           </S.ProfileName>
           <S.ProfileEmail>
             <span>{email && email}</span>

@@ -17,6 +17,20 @@ export const Button = styled.button`
   z-index: 0;
   overflow: hidden;
 
+  &.yellow-button {
+    background-color: var(--accent-yellow-color);
+    color: var(--main-dark-color);
+    &:hover {
+      background-color: var(--accent-yellow-color);
+    }
+  }
+
+  &.loading.yellow-button {
+     &::after {
+      background-color: var(--accent-yellow-color);
+     }
+  }
+
   &.loading {
     &::before {
       content: '';

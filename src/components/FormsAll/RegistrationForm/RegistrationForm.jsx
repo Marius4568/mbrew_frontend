@@ -44,10 +44,12 @@ const RegistrationForm = () => {
         navigate('/login');
       }
     } catch (err) {
-      setbuttonLoading('');
       toast.error(err.message);
       console.log(err.message);
       return err.message;
+    }
+    finally {
+      setbuttonLoading('');
     }
   };
 

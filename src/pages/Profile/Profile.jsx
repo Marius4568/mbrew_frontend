@@ -8,7 +8,7 @@ const Profile = () => {
   const { firstName, lastName } = JSON.parse(localStorage.getItem('userData'));
 
   return <>
-  <Dashboard userName={`${capitalize(firstName)} ${capitalize(lastName)}`} />
+    <Dashboard userName={`${capitalize(firstName)} ${lastName && capitalize(lastName)}`} />
   </>;
 };
 

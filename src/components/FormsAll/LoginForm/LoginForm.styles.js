@@ -18,6 +18,17 @@ export const LoginFormWrapper = styled.section`
 
   @media (min-width: 500px) {
     margin-top: 3rem;
+    
+    button {
+      width: auto
+    }
+  }
+
+  @media (max-width: 700px) { 
+    button {
+      width: calc(100% - 4rem);
+      font-size: 0.85rem;
+    }
   }
 
   @media (min-width: 1000px) {
@@ -30,7 +41,7 @@ export const LoginFormWrapper = styled.section`
 
   form > p {
     margin: 2rem;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
 
     a {

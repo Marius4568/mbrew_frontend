@@ -15,7 +15,7 @@ const ProfileNavItem = () => {
       <Link to="/profile">
         <div className="ProfileIconWrapper">
           {!userData && !token && <PersonIcon />}
-          {userData && token && <span>{userData.firstName[0].toUpperCase() + userData.lastName[0].toUpperCase()}</span>}
+          {userData && token && <span>{userData.firstName[0].toUpperCase() + (userData.lastName[0]?.toUpperCase() || '')}</span>}
         </div>
       </Link>
     </S.ProfileNavItem>

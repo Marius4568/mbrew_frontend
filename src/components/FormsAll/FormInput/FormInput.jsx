@@ -16,7 +16,7 @@ const FormInput = (props) => {
 };
 
 FormInput.propTypes = {
-  value: PropTypes.object,
+  value: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
 };
