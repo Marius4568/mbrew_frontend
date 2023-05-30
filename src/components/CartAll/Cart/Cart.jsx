@@ -8,6 +8,7 @@ import { fadeInFadeOut } from '../../../animations/variants/fadeInFadeOut.js';
 import { slideFromRight } from '../../../animations/variants/slideFromRight.js';
 
 import CartItem from '../CartItem/CartItem';
+import DemoPaymentInstructions from '../../DemoPaymentInstructions/DemoPaymentInstructions.jsx';
 
 import { formatCurrency } from '../../../util/formatCurrency.js';
 
@@ -111,6 +112,7 @@ const Cart = () => {
                 <S.CheckoutButton className={buttonLoading} handleClick={() => handleCheckout(cartItems)}>
                   Checkout
                 </S.CheckoutButton>
+                <DemoPaymentInstructions/>
               </S.CartBottomWrap>
             </S.CartInner>
           )}
